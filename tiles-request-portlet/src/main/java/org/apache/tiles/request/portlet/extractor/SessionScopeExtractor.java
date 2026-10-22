@@ -18,14 +18,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.apache.tiles.request.portlet.extractor;
+package io.github.laurentschoelens.tiles.request.portlet.extractor;
 
 import java.util.Enumeration;
 
 import javax.portlet.PortletRequest;
 import javax.portlet.PortletSession;
 
-import org.apache.tiles.request.attribute.AttributeExtractor;
+import io.github.laurentschoelens.tiles.request.attribute.AttributeExtractor;
 
 /**
  * Extracts attributes from the session scope of a portlet request.

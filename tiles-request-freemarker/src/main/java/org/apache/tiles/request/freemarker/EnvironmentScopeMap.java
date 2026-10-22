@@ -18,12 +18,12 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.apache.tiles.request.freemarker;
+package io.github.laurentschoelens.tiles.request.freemarker;
 
 import java.util.Set;
 
-import org.apache.tiles.request.collection.ScopeMap;
-import org.apache.tiles.request.freemarker.extractor.EnvironmentScopeExtractor;
+import io.github.laurentschoelens.tiles.request.collection.ScopeMap;
+import io.github.laurentschoelens.tiles.request.freemarker.extractor.EnvironmentScopeExtractor;
 
 import freemarker.core.Environment;
 import freemarker.template.TemplateModelException;

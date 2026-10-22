@@ -19,20 +19,20 @@
  * under the License.
  */
 
-package org.apache.tiles.request.freemarker.render;
+package io.github.laurentschoelens.tiles.request.freemarker.render;
 
 import java.io.IOException;
 
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
-import org.apache.tiles.request.Request;
-import org.apache.tiles.request.freemarker.FreemarkerRequestException;
-import org.apache.tiles.request.render.CannotRenderException;
-import org.apache.tiles.request.render.Renderer;
-import org.apache.tiles.request.servlet.ExternalWriterHttpServletResponse;
-import org.apache.tiles.request.servlet.ServletRequest;
+import io.github.laurentschoelens.tiles.request.Request;
+import io.github.laurentschoelens.tiles.request.freemarker.FreemarkerRequestException;
+import io.github.laurentschoelens.tiles.request.render.CannotRenderException;
+import io.github.laurentschoelens.tiles.request.render.Renderer;
+import io.github.laurentschoelens.tiles.request.servlet.ExternalWriterHttpServletResponse;
+import io.github.laurentschoelens.tiles.request.servlet.ServletRequest;
 
 /**
  * FreeMarker renderer for rendering FreeMarker templates as Tiles attributes.
@@ -65,7 +65,7 @@ public class FreemarkerRenderer implements Renderer {
         if (path == null) {
             throw new CannotRenderException("Cannot dispatch a null path");
         }
-        ServletRequest servletRequest = org.apache.tiles.request.servlet.ServletUtil.getServletRequest(request);
+        ServletRequest servletRequest = io.github.laurentschoelens.tiles.request.servlet.ServletUtil.getServletRequest(request);
         HttpServletRequest httpRequest = servletRequest.getRequest();
         HttpServletResponse httpResponse = servletRequest.getResponse();
         servlet.setValue(path);

@@ -18,17 +18,17 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.apache.tiles.request.freemarker.render;
+package io.github.laurentschoelens.tiles.request.freemarker.render;
 
 import java.util.Collections;
 import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.servlet.ServletConfig;
-import javax.servlet.ServletContext;
+import jakarta.servlet.ServletConfig;
+import jakarta.servlet.ServletContext;
 
-import org.apache.tiles.request.ApplicationContext;
+import io.github.laurentschoelens.tiles.request.ApplicationContext;
 
 /**
  * Implements {@link ServletConfig} to initialize the internal servlet using parameters
@@ -71,7 +71,7 @@ public class InitParamsServletConfig implements ServletConfig {
 
     /** {@inheritDoc} */
     public ServletContext getServletContext() {
-        return org.apache.tiles.request.servlet.ServletUtil.getServletContext(applicationContext);
+        return io.github.laurentschoelens.tiles.request.servlet.ServletUtil.getServletContext(applicationContext);
     }
 
     /** {@inheritDoc} */

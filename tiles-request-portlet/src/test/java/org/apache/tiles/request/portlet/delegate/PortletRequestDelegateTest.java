@@ -18,7 +18,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.apache.tiles.request.portlet.delegate;
+package io.github.laurentschoelens.tiles.request.portlet.delegate;
 
 import static org.easymock.classextension.EasyMock.*;
 import static org.junit.Assert.*;
@@ -27,7 +27,7 @@ import java.util.Map;
 
 import javax.portlet.PortletRequest;
 
-import org.apache.tiles.request.collection.ReadOnlyEnumerationMap;
+import io.github.laurentschoelens.tiles.request.collection.ReadOnlyEnumerationMap;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -58,7 +58,7 @@ public class PortletRequestDelegateTest {
     }
 
     /**
-     * Test method for {@link org.apache.tiles.request.portlet.delegate.PortletRequestDelegate#getParam()}.
+     * Test method for {@link io.github.laurentschoelens.tiles.request.portlet.delegate.PortletRequestDelegate#getParam()}.
      */
     @Test
     public void testGetParam() {
@@ -68,7 +68,7 @@ public class PortletRequestDelegateTest {
     }
 
     /**
-     * Test method for {@link org.apache.tiles.request.portlet.delegate.PortletRequestDelegate#getParamValues()}.
+     * Test method for {@link io.github.laurentschoelens.tiles.request.portlet.delegate.PortletRequestDelegate#getParamValues()}.
      */
     @SuppressWarnings("unchecked")
     @Test

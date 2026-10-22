@@ -18,7 +18,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.apache.tiles.request.freemarker.autotag;
+package io.github.laurentschoelens.tiles.request.freemarker.autotag;
 
 import static org.easymock.EasyMock.*;
 import static org.junit.Assert.*;
@@ -27,18 +27,18 @@ import java.io.IOException;
 import java.io.Writer;
 import java.util.HashMap;
 import java.util.Map;
-import javax.servlet.GenericServlet;
-import javax.servlet.ServletContext;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.GenericServlet;
+import jakarta.servlet.ServletContext;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
-import org.apache.tiles.autotag.core.runtime.ModelBody;
-import org.apache.tiles.request.ApplicationAccess;
-import org.apache.tiles.request.ApplicationContext;
-import org.apache.tiles.request.Request;
-import org.apache.tiles.request.freemarker.FreemarkerRequest;
-import org.apache.tiles.request.freemarker.autotag.FreemarkerAutotagRuntime;
-import org.apache.tiles.request.freemarker.autotag.FreemarkerModelBody;
+import io.github.laurentschoelens.tiles.autotag.core.runtime.ModelBody;
+import io.github.laurentschoelens.tiles.request.ApplicationAccess;
+import io.github.laurentschoelens.tiles.request.ApplicationContext;
+import io.github.laurentschoelens.tiles.request.Request;
+import io.github.laurentschoelens.tiles.request.freemarker.FreemarkerRequest;
+import io.github.laurentschoelens.tiles.request.freemarker.autotag.FreemarkerAutotagRuntime;
+import io.github.laurentschoelens.tiles.request.freemarker.autotag.FreemarkerModelBody;
 import org.junit.Test;
 import freemarker.core.Environment;
 import freemarker.core.Macro;

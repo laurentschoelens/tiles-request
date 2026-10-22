@@ -18,7 +18,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.apache.tiles.request.portlet;
+package io.github.laurentschoelens.tiles.request.portlet;
 
 import static org.easymock.EasyMock.*;
 import static org.easymock.classextension.EasyMock.*;
@@ -31,9 +31,9 @@ import java.util.Locale;
 
 import javax.portlet.PortletContext;
 
-import org.apache.tiles.request.ApplicationResource;
-import org.apache.tiles.request.collection.ReadOnlyEnumerationMap;
-import org.apache.tiles.request.collection.ScopeMap;
+import io.github.laurentschoelens.tiles.request.ApplicationResource;
+import io.github.laurentschoelens.tiles.request.collection.ReadOnlyEnumerationMap;
+import io.github.laurentschoelens.tiles.request.collection.ScopeMap;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -64,7 +64,7 @@ public class PortletApplicationContextTest {
     }
 
     /**
-     * Test method for {@link org.apache.tiles.request.portlet.PortletApplicationContext#getContext()}.
+     * Test method for {@link io.github.laurentschoelens.tiles.request.portlet.PortletApplicationContext#getContext()}.
      */
     @Test
     public void testGetContext() {
@@ -74,7 +74,7 @@ public class PortletApplicationContextTest {
     }
 
     /**
-     * Test method for {@link org.apache.tiles.request.portlet.PortletApplicationContext#getPortletContext()}.
+     * Test method for {@link io.github.laurentschoelens.tiles.request.portlet.PortletApplicationContext#getPortletContext()}.
      */
     @Test
     public void testGetPortletContext() {
@@ -84,7 +84,7 @@ public class PortletApplicationContextTest {
     }
 
     /**
-     * Test method for {@link org.apache.tiles.request.portlet.PortletApplicationContext#getApplicationScope()}.
+     * Test method for {@link io.github.laurentschoelens.tiles.request.portlet.PortletApplicationContext#getApplicationScope()}.
      */
     @Test
     public void testGetApplicationScope() {
@@ -94,7 +94,7 @@ public class PortletApplicationContextTest {
     }
 
     /**
-     * Test method for {@link org.apache.tiles.request.portlet.PortletApplicationContext#getInitParams()}.
+     * Test method for {@link io.github.laurentschoelens.tiles.request.portlet.PortletApplicationContext#getInitParams()}.
      */
     @Test
     public void testGetInitParams() {
@@ -104,7 +104,7 @@ public class PortletApplicationContextTest {
     }
 
     /**
-     * Test method for {@link org.apache.tiles.request.portlet.PortletApplicationContext#getResource(java.lang.String)}.
+     * Test method for {@link io.github.laurentschoelens.tiles.request.portlet.PortletApplicationContext#getResource(java.lang.String)}.
      * @throws IOException If something goes wrong.
      */
     @Test

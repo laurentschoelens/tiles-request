@@ -19,7 +19,7 @@
  * under the License.
  */
 
-package org.apache.tiles.request.freemarker;
+package io.github.laurentschoelens.tiles.request.freemarker;
 
 import static org.junit.Assert.*;
 

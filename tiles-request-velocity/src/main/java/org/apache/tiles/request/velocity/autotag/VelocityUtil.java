@@ -19,7 +19,7 @@
  * under the License.
  */
 
-package org.apache.tiles.request.velocity.autotag;
+package io.github.laurentschoelens.tiles.request.velocity.autotag;
 
 import java.util.Map;
 

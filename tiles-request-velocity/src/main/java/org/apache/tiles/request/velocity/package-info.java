@@ -21,4 +21,4 @@
 /**
  * Tiles request support for Velocity.
  */
-package org.apache.tiles.request.velocity;
+package io.github.laurentschoelens.tiles.request.velocity;

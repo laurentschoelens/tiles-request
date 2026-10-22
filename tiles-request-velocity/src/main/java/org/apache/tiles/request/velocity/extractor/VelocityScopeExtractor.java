@@ -18,11 +18,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.apache.tiles.request.velocity.extractor;
+package io.github.laurentschoelens.tiles.request.velocity.extractor;
 
 import java.util.Enumeration;
 
-import org.apache.tiles.request.attribute.AttributeExtractor;
+import io.github.laurentschoelens.tiles.request.attribute.AttributeExtractor;
 import org.apache.velocity.context.Context;
 
 /**

@@ -18,12 +18,12 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.apache.tiles.request.freemarker.autotag;
+package io.github.laurentschoelens.tiles.request.freemarker.autotag;
 
 import java.io.IOException;
 import java.io.Writer;
 
-import org.apache.tiles.autotag.core.runtime.AbstractModelBody;
+import io.github.laurentschoelens.tiles.autotag.core.runtime.AbstractModelBody;
 
 import freemarker.template.TemplateDirectiveBody;
 import freemarker.template.TemplateException;

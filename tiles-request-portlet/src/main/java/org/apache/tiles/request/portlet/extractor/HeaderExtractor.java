@@ -18,14 +18,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.apache.tiles.request.portlet.extractor;
+package io.github.laurentschoelens.tiles.request.portlet.extractor;
 
 import java.util.Enumeration;
 
 import javax.portlet.PortletRequest;
 import javax.portlet.PortletResponse;
 
-import org.apache.tiles.request.attribute.EnumeratedValuesExtractor;
+import io.github.laurentschoelens.tiles.request.attribute.EnumeratedValuesExtractor;
 
 /**
  * Extracts and puts headers in portlet requests and responses.

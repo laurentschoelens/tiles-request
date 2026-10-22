@@ -18,7 +18,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.apache.tiles.request.portlet.extractor;
+package io.github.laurentschoelens.tiles.request.portlet.extractor;
 
 import static org.easymock.EasyMock.*;
 import static org.easymock.classextension.EasyMock.*;
@@ -58,7 +58,7 @@ public class ParameterExtractorTest {
     }
 
     /**
-     * Test method for {@link org.apache.tiles.request.portlet.extractor.ParameterExtractor#getKeys()}.
+     * Test method for {@link io.github.laurentschoelens.tiles.request.portlet.extractor.ParameterExtractor#getKeys()}.
      */
     @SuppressWarnings("unchecked")
     @Test
@@ -73,7 +73,7 @@ public class ParameterExtractorTest {
     }
 
     /**
-     * Test method for {@link org.apache.tiles.request.portlet.extractor.ParameterExtractor#getValue(java.lang.String)}.
+     * Test method for {@link io.github.laurentschoelens.tiles.request.portlet.extractor.ParameterExtractor#getValue(java.lang.String)}.
      */
     @Test
     public void testGetValue() {

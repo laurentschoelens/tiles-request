@@ -18,10 +18,10 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.apache.tiles.request.freemarker;
+package io.github.laurentschoelens.tiles.request.freemarker;
 
-import org.apache.tiles.request.ApplicationContext;
-import org.apache.tiles.request.servlet.ServletUtil;
+import io.github.laurentschoelens.tiles.request.ApplicationContext;
+import io.github.laurentschoelens.tiles.request.servlet.ServletUtil;
 
 import freemarker.core.Environment;
 import freemarker.ext.servlet.FreemarkerServlet;
@@ -79,7 +79,7 @@ public final class FreemarkerRequestUtil {
     /**
      * Returns the application context. It must be
      * first saved creating an {@link ApplicationContext} and using
-     * {@link org.apache.tiles.request.ApplicationAccess#register(ApplicationContext)}.
+     * {@link io.github.laurentschoelens.tiles.request.ApplicationAccess#register(ApplicationContext)}.
      *
      * @param env The Freemarker environment.
      * @return The

@@ -21,4 +21,4 @@
 /**
  * Renderering support for Velocity.
  */
-package org.apache.tiles.request.velocity.render;
+package io.github.laurentschoelens.tiles.request.velocity.render;

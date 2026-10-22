@@ -18,14 +18,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.apache.tiles.request.velocity.autotag;
+package io.github.laurentschoelens.tiles.request.velocity.autotag;
 
 import static org.easymock.EasyMock.*;
 
 import java.io.IOException;
 import java.io.Writer;
 
-import org.apache.tiles.request.velocity.autotag.VelocityModelBody;
+import io.github.laurentschoelens.tiles.request.velocity.autotag.VelocityModelBody;
 import org.apache.velocity.context.InternalContextAdapter;
 import org.apache.velocity.runtime.parser.node.ASTBlock;
 import org.junit.Test;
@@ -38,7 +38,7 @@ import org.junit.Test;
 public class VelocityModelBodyTest {
 
     /**
-     * Test method for {@link org.apache.tiles.request.velocity.autotag.VelocityModelBody#evaluate(java.io.Writer)}.
+     * Test method for {@link io.github.laurentschoelens.tiles.request.velocity.autotag.VelocityModelBody#evaluate(java.io.Writer)}.
      * @throws IOException If something goes wrong.
      */
     @Test

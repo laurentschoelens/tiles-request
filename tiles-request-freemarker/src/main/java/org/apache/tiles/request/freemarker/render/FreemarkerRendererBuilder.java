@@ -18,15 +18,15 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.apache.tiles.request.freemarker.render;
+package io.github.laurentschoelens.tiles.request.freemarker.render;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.servlet.ServletException;
+import jakarta.servlet.ServletException;
 
-import org.apache.tiles.request.ApplicationContext;
-import org.apache.tiles.request.freemarker.FreemarkerRequestException;
+import io.github.laurentschoelens.tiles.request.ApplicationContext;
+import io.github.laurentschoelens.tiles.request.freemarker.FreemarkerRequestException;
 
 /**
  * Builds instances of {@link FreemarkerRenderer}.

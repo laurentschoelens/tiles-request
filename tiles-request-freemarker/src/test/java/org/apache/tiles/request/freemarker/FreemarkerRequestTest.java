@@ -19,7 +19,7 @@
  * under the License.
  */
 
-package org.apache.tiles.request.freemarker;
+package io.github.laurentschoelens.tiles.request.freemarker;
 
 import static org.easymock.EasyMock.*;
 import static org.junit.Assert.*;
@@ -32,13 +32,13 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
-import org.apache.tiles.request.ApplicationContext;
-import org.apache.tiles.request.Request;
-import org.apache.tiles.request.DispatchRequest;
-import org.apache.tiles.request.servlet.ServletRequest;
+import io.github.laurentschoelens.tiles.request.ApplicationContext;
+import io.github.laurentschoelens.tiles.request.Request;
+import io.github.laurentschoelens.tiles.request.DispatchRequest;
+import io.github.laurentschoelens.tiles.request.servlet.ServletRequest;
 import org.junit.Before;
 import org.junit.Test;
 

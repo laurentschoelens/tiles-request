@@ -18,7 +18,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.apache.tiles.request.freemarker.servlet;
+package io.github.laurentschoelens.tiles.request.freemarker.servlet;
 
 import freemarker.template.TemplateModel;
 

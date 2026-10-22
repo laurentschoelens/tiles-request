@@ -18,9 +18,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.apache.tiles.request.freemarker;
+package io.github.laurentschoelens.tiles.request.freemarker;
 
-import org.apache.tiles.request.RequestException;
+import io.github.laurentschoelens.tiles.request.RequestException;
 
 /**
  * Thrown when a Freemarker request fails.

@@ -21,4 +21,4 @@
 /**
  * Extractors to get information from Freemarker objects.
  */
-package org.apache.tiles.request.freemarker.extractor;
+package io.github.laurentschoelens.tiles.request.freemarker.extractor;

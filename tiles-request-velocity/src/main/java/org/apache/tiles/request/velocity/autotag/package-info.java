@@ -21,4 +21,4 @@
 /**
  * Runtime part of Autotag support for Velocity.
  */
-package org.apache.tiles.request.velocity.autotag;
+package io.github.laurentschoelens.tiles.request.velocity.autotag;

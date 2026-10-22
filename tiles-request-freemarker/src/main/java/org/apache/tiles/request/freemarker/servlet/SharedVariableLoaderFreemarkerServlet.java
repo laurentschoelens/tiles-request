@@ -19,17 +19,17 @@
  * under the License.
  */
 
-package org.apache.tiles.request.freemarker.servlet;
+package io.github.laurentschoelens.tiles.request.freemarker.servlet;
 
 import java.util.Enumeration;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-import javax.servlet.ServletConfig;
-import javax.servlet.ServletContext;
-import javax.servlet.ServletException;
+import jakarta.servlet.ServletConfig;
+import jakarta.servlet.ServletContext;
+import jakarta.servlet.ServletException;
 
-import org.apache.tiles.request.reflect.ClassUtil;
+import io.github.laurentschoelens.tiles.request.reflect.ClassUtil;
 
 import freemarker.cache.TemplateLoader;
 import freemarker.ext.servlet.FreemarkerServlet;
@@ -53,7 +53,7 @@ public class SharedVariableLoaderFreemarkerServlet extends FreemarkerServlet {
      * be separated by commas (,).
      */
     public static final String CUSTOM_SHARED_VARIABLE_FACTORIES_INIT_PARAM =
-        "org.apache.tiles.request.freemarker.CUSTOM_SHARED_VARIABLE_FACTORIES";
+        "io.github.laurentschoelens.tiles.request.freemarker.CUSTOM_SHARED_VARIABLE_FACTORIES";
 
     /**
      * Maps a name of a shared variable to its factory.

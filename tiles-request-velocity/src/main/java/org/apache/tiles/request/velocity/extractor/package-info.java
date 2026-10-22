@@ -21,4 +21,4 @@
 /**
  * Extractors to get info about Velocity-specific objects.
  */
-package org.apache.tiles.request.velocity.extractor;
+package io.github.laurentschoelens.tiles.request.velocity.extractor;

@@ -21,4 +21,4 @@
 /**
  * Support of Tiles requests to portlets.
  */
-package org.apache.tiles.request.portlet;
+package io.github.laurentschoelens.tiles.request.portlet;

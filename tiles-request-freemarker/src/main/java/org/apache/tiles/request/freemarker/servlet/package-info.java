@@ -21,4 +21,4 @@
 /**
  * Servlets for easy addition of shared variables.
  */
-package org.apache.tiles.request.freemarker.servlet;
+package io.github.laurentschoelens.tiles.request.freemarker.servlet;

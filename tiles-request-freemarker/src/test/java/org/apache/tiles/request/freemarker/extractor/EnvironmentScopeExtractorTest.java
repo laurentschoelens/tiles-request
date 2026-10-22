@@ -18,7 +18,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.apache.tiles.request.freemarker.extractor;
+package io.github.laurentschoelens.tiles.request.freemarker.extractor;
 
 import static org.easymock.EasyMock.*;
 import static org.easymock.classextension.EasyMock.*;
@@ -32,7 +32,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
-import org.apache.tiles.request.freemarker.FreemarkerRequestException;
+import io.github.laurentschoelens.tiles.request.freemarker.FreemarkerRequestException;
 import org.junit.Test;
 
 import freemarker.core.Environment;

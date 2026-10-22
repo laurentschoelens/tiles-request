@@ -18,15 +18,15 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.apache.tiles.request.freemarker.autotag;
+package io.github.laurentschoelens.tiles.request.freemarker.autotag;
 
 import java.util.Map;
 
-import org.apache.tiles.autotag.core.runtime.ModelBody;
-import org.apache.tiles.autotag.core.runtime.AutotagRuntime;
-import org.apache.tiles.request.Request;
-import org.apache.tiles.request.freemarker.FreemarkerRequest;
-import org.apache.tiles.request.freemarker.FreemarkerRequestUtil;
+import io.github.laurentschoelens.tiles.autotag.core.runtime.ModelBody;
+import io.github.laurentschoelens.tiles.autotag.core.runtime.AutotagRuntime;
+import io.github.laurentschoelens.tiles.request.Request;
+import io.github.laurentschoelens.tiles.request.freemarker.FreemarkerRequest;
+import io.github.laurentschoelens.tiles.request.freemarker.FreemarkerRequestUtil;
 
 import freemarker.core.Environment;
 import freemarker.template.TemplateDirectiveBody;

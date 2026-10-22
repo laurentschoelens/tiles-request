@@ -18,7 +18,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.apache.tiles.request.portlet;
+package io.github.laurentschoelens.tiles.request.portlet;
 
 import static org.easymock.EasyMock.*;
 import static org.easymock.classextension.EasyMock.*;
@@ -33,15 +33,15 @@ import javax.portlet.PortletContext;
 import javax.portlet.PortletException;
 import javax.portlet.PortletRequestDispatcher;
 import javax.portlet.PortletResponse;
-import javax.servlet.ServletOutputStream;
+import jakarta.servlet.ServletOutputStream;
 
-import org.apache.tiles.request.ApplicationContext;
-import org.apache.tiles.request.collection.HeaderValuesMap;
-import org.apache.tiles.request.collection.ReadOnlyEnumerationMap;
-import org.apache.tiles.request.collection.ScopeMap;
-import org.apache.tiles.request.portlet.delegate.RequestDelegate;
-import org.apache.tiles.request.portlet.delegate.ResponseDelegate;
-import org.apache.tiles.request.portlet.extractor.HeaderExtractor;
+import io.github.laurentschoelens.tiles.request.ApplicationContext;
+import io.github.laurentschoelens.tiles.request.collection.HeaderValuesMap;
+import io.github.laurentschoelens.tiles.request.collection.ReadOnlyEnumerationMap;
+import io.github.laurentschoelens.tiles.request.collection.ScopeMap;
+import io.github.laurentschoelens.tiles.request.portlet.delegate.RequestDelegate;
+import io.github.laurentschoelens.tiles.request.portlet.delegate.ResponseDelegate;
+import io.github.laurentschoelens.tiles.request.portlet.extractor.HeaderExtractor;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -103,7 +103,7 @@ public class PortletRequestTest {
     }
 
     /**
-     * Test method for {@link org.apache.tiles.request.portlet.PortletRequest#doForward(java.lang.String)}.
+     * Test method for {@link io.github.laurentschoelens.tiles.request.portlet.PortletRequest#doForward(java.lang.String)}.
      * @throws IOException If something goes wrong.
      * @throws PortletException If something goes wrong.
      */
@@ -121,7 +121,7 @@ public class PortletRequestTest {
     }
 
     /**
-     * Test method for {@link org.apache.tiles.request.portlet.PortletRequest#doForward(java.lang.String)}.
+     * Test method for {@link io.github.laurentschoelens.tiles.request.portlet.PortletRequest#doForward(java.lang.String)}.
      * @throws IOException If something goes wrong.
      */
     @Test(expected = IOException.class)
@@ -138,7 +138,7 @@ public class PortletRequestTest {
     }
 
     /**
-     * Test method for {@link org.apache.tiles.request.portlet.PortletRequest#doForward(java.lang.String)}.
+     * Test method for {@link io.github.laurentschoelens.tiles.request.portlet.PortletRequest#doForward(java.lang.String)}.
      * @throws IOException If something goes wrong.
      * @throws PortletException If something goes wrong.
      */
@@ -160,7 +160,7 @@ public class PortletRequestTest {
     }
 
     /**
-     * Test method for {@link org.apache.tiles.request.portlet.PortletRequest#doForward(java.lang.String)}.
+     * Test method for {@link io.github.laurentschoelens.tiles.request.portlet.PortletRequest#doForward(java.lang.String)}.
      * @throws IOException If something goes wrong.
      * @throws PortletException If something goes wrong.
      */
@@ -178,7 +178,7 @@ public class PortletRequestTest {
     }
 
     /**
-     * Test method for {@link org.apache.tiles.request.portlet.PortletRequest#doInclude(java.lang.String)}.
+     * Test method for {@link io.github.laurentschoelens.tiles.request.portlet.PortletRequest#doInclude(java.lang.String)}.
      * @throws IOException If something goes wrong.
      * @throws PortletException If something goes wrong.
      */
@@ -195,7 +195,7 @@ public class PortletRequestTest {
     }
 
     /**
-     * Test method for {@link org.apache.tiles.request.portlet.PortletRequest#doInclude(java.lang.String)}.
+     * Test method for {@link io.github.laurentschoelens.tiles.request.portlet.PortletRequest#doInclude(java.lang.String)}.
      * @throws IOException If something goes wrong.
      */
     @Test(expected = IOException.class)
@@ -211,7 +211,7 @@ public class PortletRequestTest {
     }
 
     /**
-     * Test method for {@link org.apache.tiles.request.portlet.PortletRequest#doInclude(java.lang.String)}.
+     * Test method for {@link io.github.laurentschoelens.tiles.request.portlet.PortletRequest#doInclude(java.lang.String)}.
      * @throws IOException If something goes wrong.
      * @throws PortletException If something goes wrong.
      */
@@ -232,7 +232,7 @@ public class PortletRequestTest {
     }
 
     /**
-     * Test method for {@link org.apache.tiles.request.portlet.PortletRequest#getHeader()}.
+     * Test method for {@link io.github.laurentschoelens.tiles.request.portlet.PortletRequest#getHeader()}.
      */
     @Test
     public void testGetHeader() {
@@ -240,7 +240,7 @@ public class PortletRequestTest {
     }
 
     /**
-     * Test method for {@link org.apache.tiles.request.portlet.PortletRequest#getResponseHeaders()}.
+     * Test method for {@link io.github.laurentschoelens.tiles.request.portlet.PortletRequest#getResponseHeaders()}.
      */
     @Test
     public void testGetResponseHeaders() {
@@ -248,7 +248,7 @@ public class PortletRequestTest {
     }
 
     /**
-     * Test method for {@link org.apache.tiles.request.portlet.PortletRequest#getHeaderValues()}.
+     * Test method for {@link io.github.laurentschoelens.tiles.request.portlet.PortletRequest#getHeaderValues()}.
      */
     @Test
     public void testGetHeaderValues() {
@@ -256,7 +256,7 @@ public class PortletRequestTest {
     }
 
     /**
-     * Test method for {@link org.apache.tiles.request.portlet.PortletRequest#getParam()}.
+     * Test method for {@link io.github.laurentschoelens.tiles.request.portlet.PortletRequest#getParam()}.
      */
     @SuppressWarnings("unchecked")
     @Test
@@ -271,7 +271,7 @@ public class PortletRequestTest {
     }
 
     /**
-     * Test method for {@link org.apache.tiles.request.portlet.PortletRequest#getParamValues()}.
+     * Test method for {@link io.github.laurentschoelens.tiles.request.portlet.PortletRequest#getParamValues()}.
      */
     @SuppressWarnings("unchecked")
     @Test
@@ -286,7 +286,7 @@ public class PortletRequestTest {
     }
 
     /**
-     * Test method for {@link org.apache.tiles.request.portlet.PortletRequest#getRequestScope()}.
+     * Test method for {@link io.github.laurentschoelens.tiles.request.portlet.PortletRequest#getRequestScope()}.
      */
     @Test
     public void testGetRequestScope() {
@@ -294,7 +294,7 @@ public class PortletRequestTest {
     }
 
     /**
-     * Test method for {@link org.apache.tiles.request.portlet.PortletRequest#getSessionScope()}.
+     * Test method for {@link io.github.laurentschoelens.tiles.request.portlet.PortletRequest#getSessionScope()}.
      */
     @Test
     public void testGetSessionScope() {
@@ -302,7 +302,7 @@ public class PortletRequestTest {
     }
 
     /**
-     * Test method for {@link org.apache.tiles.request.portlet.PortletRequest#getPortletSessionScope()}.
+     * Test method for {@link io.github.laurentschoelens.tiles.request.portlet.PortletRequest#getPortletSessionScope()}.
      */
     @Test
     public void testGetPortletSessionScope() {
@@ -310,7 +310,7 @@ public class PortletRequestTest {
     }
 
     /**
-     * Test method for {@link org.apache.tiles.request.portlet.PortletRequest#getOutputStream()}.
+     * Test method for {@link io.github.laurentschoelens.tiles.request.portlet.PortletRequest#getOutputStream()}.
      * @throws IOException If something goes wrong.
      */
     @Test
@@ -325,7 +325,7 @@ public class PortletRequestTest {
     }
 
     /**
-     * Test method for {@link org.apache.tiles.request.portlet.PortletRequest#getWriter()}.
+     * Test method for {@link io.github.laurentschoelens.tiles.request.portlet.PortletRequest#getWriter()}.
      * @throws IOException If something goes wrong.
      */
     @Test
@@ -340,7 +340,7 @@ public class PortletRequestTest {
     }
 
     /**
-     * Test method for {@link org.apache.tiles.request.portlet.PortletRequest#getPrintWriter()}.
+     * Test method for {@link io.github.laurentschoelens.tiles.request.portlet.PortletRequest#getPrintWriter()}.
      * @throws IOException If something goes wrong.
      */
     @Test
@@ -355,7 +355,7 @@ public class PortletRequestTest {
     }
 
     /**
-     * Test method for {@link org.apache.tiles.request.portlet.PortletRequest#isResponseCommitted()}.
+     * Test method for {@link io.github.laurentschoelens.tiles.request.portlet.PortletRequest#isResponseCommitted()}.
      */
     @Test
     public void testIsResponseCommitted() {
@@ -367,7 +367,7 @@ public class PortletRequestTest {
     }
 
     /**
-     * Test method for {@link org.apache.tiles.request.portlet.PortletRequest#setContentType(java.lang.String)}.
+     * Test method for {@link io.github.laurentschoelens.tiles.request.portlet.PortletRequest#setContentType(java.lang.String)}.
      */
     @Test
     public void testSetContentType() {
@@ -379,7 +379,7 @@ public class PortletRequestTest {
     }
 
     /**
-     * Test method for {@link org.apache.tiles.request.portlet.PortletRequest#getRequestLocale()}.
+     * Test method for {@link io.github.laurentschoelens.tiles.request.portlet.PortletRequest#getRequestLocale()}.
      */
     @Test
     public void testGetRequestLocale() {
@@ -393,10 +393,10 @@ public class PortletRequestTest {
     }
 
     /**
-     * Test method for {@link org.apache.tiles.request.portlet.PortletRequest#getRequestObjects()}.
+     * Test method for {@link io.github.laurentschoelens.tiles.request.portlet.PortletRequest#getRequestObjects()}.
      */
     /**
-     * Test method for {@link org.apache.tiles.request.portlet.PortletRequest#getRequest()}.
+     * Test method for {@link io.github.laurentschoelens.tiles.request.portlet.PortletRequest#getRequest()}.
      */
     @Test
     public void testGetRequest() {
@@ -406,7 +406,7 @@ public class PortletRequestTest {
     }
 
     /**
-     * Test method for {@link org.apache.tiles.request.portlet.PortletRequest#getResponse()}.
+     * Test method for {@link io.github.laurentschoelens.tiles.request.portlet.PortletRequest#getResponse()}.
      */
     @Test
     public void testGetResponse() {
@@ -416,7 +416,7 @@ public class PortletRequestTest {
     }
 
     /**
-     * Test method for {@link org.apache.tiles.request.portlet.PortletRequest#isUserInRole(java.lang.String)}.
+     * Test method for {@link io.github.laurentschoelens.tiles.request.portlet.PortletRequest#isUserInRole(java.lang.String)}.
      */
     @Test
     public void testIsUserInRole() {

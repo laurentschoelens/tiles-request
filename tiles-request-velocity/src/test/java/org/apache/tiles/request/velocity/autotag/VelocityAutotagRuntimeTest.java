@@ -18,22 +18,22 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.apache.tiles.request.velocity.autotag;
+package io.github.laurentschoelens.tiles.request.velocity.autotag;
 
 import static org.easymock.EasyMock.*;
 import static org.junit.Assert.*;
 import java.io.Writer;
 import java.util.Map;
-import javax.servlet.ServletContext;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import org.apache.tiles.autotag.core.runtime.ModelBody;
-import org.apache.tiles.request.ApplicationAccess;
-import org.apache.tiles.request.ApplicationContext;
-import org.apache.tiles.request.Request;
-import org.apache.tiles.request.velocity.VelocityRequest;
-import org.apache.tiles.request.velocity.autotag.VelocityAutotagRuntime;
-import org.apache.tiles.request.velocity.autotag.VelocityModelBody;
+import jakarta.servlet.ServletContext;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import io.github.laurentschoelens.tiles.autotag.core.runtime.ModelBody;
+import io.github.laurentschoelens.tiles.request.ApplicationAccess;
+import io.github.laurentschoelens.tiles.request.ApplicationContext;
+import io.github.laurentschoelens.tiles.request.Request;
+import io.github.laurentschoelens.tiles.request.velocity.VelocityRequest;
+import io.github.laurentschoelens.tiles.request.velocity.autotag.VelocityAutotagRuntime;
+import io.github.laurentschoelens.tiles.request.velocity.autotag.VelocityModelBody;
 import org.apache.velocity.context.InternalContextAdapter;
 import org.apache.velocity.runtime.parser.node.ASTBlock;
 import org.apache.velocity.runtime.parser.node.ASTMap;

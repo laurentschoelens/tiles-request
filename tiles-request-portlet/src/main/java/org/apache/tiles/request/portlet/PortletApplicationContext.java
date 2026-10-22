@@ -18,7 +18,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.apache.tiles.request.portlet;
+package io.github.laurentschoelens.tiles.request.portlet;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -29,13 +29,13 @@ import java.util.Map;
 
 import javax.portlet.PortletContext;
 
-import org.apache.tiles.request.ApplicationContext;
-import org.apache.tiles.request.ApplicationResource;
-import org.apache.tiles.request.collection.ReadOnlyEnumerationMap;
-import org.apache.tiles.request.collection.ScopeMap;
-import org.apache.tiles.request.locale.URLApplicationResource;
-import org.apache.tiles.request.portlet.extractor.ApplicationScopeExtractor;
-import org.apache.tiles.request.portlet.extractor.InitParameterExtractor;
+import io.github.laurentschoelens.tiles.request.ApplicationContext;
+import io.github.laurentschoelens.tiles.request.ApplicationResource;
+import io.github.laurentschoelens.tiles.request.collection.ReadOnlyEnumerationMap;
+import io.github.laurentschoelens.tiles.request.collection.ScopeMap;
+import io.github.laurentschoelens.tiles.request.locale.URLApplicationResource;
+import io.github.laurentschoelens.tiles.request.portlet.extractor.ApplicationScopeExtractor;
+import io.github.laurentschoelens.tiles.request.portlet.extractor.InitParameterExtractor;
 
 /**
  * Portlet-based TilesApplicationContext implementation.

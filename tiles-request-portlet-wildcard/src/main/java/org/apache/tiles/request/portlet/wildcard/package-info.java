@@ -23,4 +23,4 @@
  * application. These classes can manage resource getting through the use of
  * Spring-like wildcards patterns.
  */
-package org.apache.tiles.request.portlet.wildcard;
+package io.github.laurentschoelens.tiles.request.portlet.wildcard;

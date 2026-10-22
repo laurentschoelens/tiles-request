@@ -21,4 +21,4 @@
 /**
  * Runtime part of Autotag support for Freemarker.
  */
-package org.apache.tiles.request.freemarker.autotag;
+package io.github.laurentschoelens.tiles.request.freemarker.autotag;

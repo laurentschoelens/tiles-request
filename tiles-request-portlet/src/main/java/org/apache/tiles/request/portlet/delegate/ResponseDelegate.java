@@ -18,7 +18,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.apache.tiles.request.portlet.delegate;
+package io.github.laurentschoelens.tiles.request.portlet.delegate;
 
 import java.io.IOException;
 import java.io.OutputStream;

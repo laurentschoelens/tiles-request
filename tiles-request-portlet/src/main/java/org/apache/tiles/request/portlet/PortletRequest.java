@@ -18,7 +18,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.apache.tiles.request.portlet;
+package io.github.laurentschoelens.tiles.request.portlet;
 
 import java.io.IOException;
 import java.io.OutputStream;
@@ -36,17 +36,17 @@ import javax.portlet.PortletRequestDispatcher;
 import javax.portlet.PortletResponse;
 import javax.portlet.PortletSession;
 
-import org.apache.tiles.request.AbstractClientRequest;
-import org.apache.tiles.request.ApplicationContext;
-import org.apache.tiles.request.attribute.Addable;
-import org.apache.tiles.request.collection.HeaderValuesMap;
-import org.apache.tiles.request.collection.ReadOnlyEnumerationMap;
-import org.apache.tiles.request.collection.ScopeMap;
-import org.apache.tiles.request.portlet.delegate.RequestDelegate;
-import org.apache.tiles.request.portlet.delegate.ResponseDelegate;
-import org.apache.tiles.request.portlet.extractor.HeaderExtractor;
-import org.apache.tiles.request.portlet.extractor.RequestScopeExtractor;
-import org.apache.tiles.request.portlet.extractor.SessionScopeExtractor;
+import io.github.laurentschoelens.tiles.request.AbstractClientRequest;
+import io.github.laurentschoelens.tiles.request.ApplicationContext;
+import io.github.laurentschoelens.tiles.request.attribute.Addable;
+import io.github.laurentschoelens.tiles.request.collection.HeaderValuesMap;
+import io.github.laurentschoelens.tiles.request.collection.ReadOnlyEnumerationMap;
+import io.github.laurentschoelens.tiles.request.collection.ScopeMap;
+import io.github.laurentschoelens.tiles.request.portlet.delegate.RequestDelegate;
+import io.github.laurentschoelens.tiles.request.portlet.delegate.ResponseDelegate;
+import io.github.laurentschoelens.tiles.request.portlet.extractor.HeaderExtractor;
+import io.github.laurentschoelens.tiles.request.portlet.extractor.RequestScopeExtractor;
+import io.github.laurentschoelens.tiles.request.portlet.extractor.SessionScopeExtractor;
 
 /**
  * Portlet-based TilesApplicationContext implementation.

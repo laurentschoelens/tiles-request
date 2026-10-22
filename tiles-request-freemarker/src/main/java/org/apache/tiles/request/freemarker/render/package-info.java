@@ -21,4 +21,4 @@
 /**
  * Rendering of Freemarker templates.
  */
-package org.apache.tiles.request.freemarker.render;
+package io.github.laurentschoelens.tiles.request.freemarker.render;

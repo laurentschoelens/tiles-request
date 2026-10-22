@@ -18,13 +18,13 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.apache.tiles.request.velocity;
+package io.github.laurentschoelens.tiles.request.velocity;
 
 import java.util.HashSet;
 import java.util.Set;
 
-import org.apache.tiles.request.collection.ScopeMap;
-import org.apache.tiles.request.velocity.extractor.VelocityScopeExtractor;
+import io.github.laurentschoelens.tiles.request.collection.ScopeMap;
+import io.github.laurentschoelens.tiles.request.velocity.extractor.VelocityScopeExtractor;
 import org.apache.velocity.context.Context;
 
 /**

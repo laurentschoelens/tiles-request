@@ -18,7 +18,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.apache.tiles.request.portlet.delegate;
+package io.github.laurentschoelens.tiles.request.portlet.delegate;
 
 import static org.easymock.classextension.EasyMock.*;
 import static org.junit.Assert.*;
@@ -59,7 +59,7 @@ public class MimeResponseDelegateTest {
     }
 
     /**
-     * Test method for {@link org.apache.tiles.request.portlet.delegate.MimeResponseDelegate#getOutputStream()}.
+     * Test method for {@link io.github.laurentschoelens.tiles.request.portlet.delegate.MimeResponseDelegate#getOutputStream()}.
      * @throws IOException If something goes wrong.
      */
     @Test
@@ -74,7 +74,7 @@ public class MimeResponseDelegateTest {
     }
 
     /**
-     * Test method for {@link org.apache.tiles.request.portlet.delegate.MimeResponseDelegate#getPrintWriter()}.
+     * Test method for {@link io.github.laurentschoelens.tiles.request.portlet.delegate.MimeResponseDelegate#getPrintWriter()}.
      * @throws IOException If something goes wrong.
      */
     @Test
@@ -89,7 +89,7 @@ public class MimeResponseDelegateTest {
     }
 
     /**
-     * Test method for {@link org.apache.tiles.request.portlet.delegate.MimeResponseDelegate#getWriter()}.
+     * Test method for {@link io.github.laurentschoelens.tiles.request.portlet.delegate.MimeResponseDelegate#getWriter()}.
      * @throws IOException If something goes wrong.
      */
     @Test
@@ -104,7 +104,7 @@ public class MimeResponseDelegateTest {
     }
 
     /**
-     * Test method for {@link org.apache.tiles.request.portlet.delegate.MimeResponseDelegate#isResponseCommitted()}.
+     * Test method for {@link io.github.laurentschoelens.tiles.request.portlet.delegate.MimeResponseDelegate#isResponseCommitted()}.
      */
     @Test
     public void testIsResponseCommitted() {

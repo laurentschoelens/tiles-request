@@ -18,7 +18,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.apache.tiles.request.freemarker;
+package io.github.laurentschoelens.tiles.request.freemarker;
 
 import static org.easymock.EasyMock.*;
 import static org.easymock.classextension.EasyMock.*;
@@ -28,12 +28,12 @@ import java.io.StringWriter;
 import java.util.HashMap;
 import java.util.Locale;
 
-import javax.servlet.GenericServlet;
-import javax.servlet.ServletContext;
-import javax.servlet.http.HttpServletRequest;
+import jakarta.servlet.GenericServlet;
+import jakarta.servlet.ServletContext;
+import jakarta.servlet.http.HttpServletRequest;
 
-import org.apache.tiles.request.ApplicationAccess;
-import org.apache.tiles.request.ApplicationContext;
+import io.github.laurentschoelens.tiles.request.ApplicationAccess;
+import io.github.laurentschoelens.tiles.request.ApplicationContext;
 import org.junit.Before;
 import org.junit.Test;
 

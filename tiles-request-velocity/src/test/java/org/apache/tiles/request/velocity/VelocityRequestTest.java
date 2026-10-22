@@ -19,7 +19,7 @@
  * under the License.
  */
 
-package org.apache.tiles.request.velocity;
+package io.github.laurentschoelens.tiles.request.velocity;
 
 import static org.easymock.EasyMock.*;
 import static org.easymock.classextension.EasyMock.*;
@@ -30,15 +30,15 @@ import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.util.Collections;
 
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
-import org.apache.tiles.request.ApplicationContext;
-import org.apache.tiles.request.DispatchRequest;
-import org.apache.tiles.request.servlet.ExternalWriterHttpServletResponse;
-import org.apache.tiles.request.servlet.ServletRequest;
+import io.github.laurentschoelens.tiles.request.ApplicationContext;
+import io.github.laurentschoelens.tiles.request.DispatchRequest;
+import io.github.laurentschoelens.tiles.request.servlet.ExternalWriterHttpServletResponse;
+import io.github.laurentschoelens.tiles.request.servlet.ServletRequest;
 import org.apache.velocity.context.Context;
 import org.junit.Before;
 import org.junit.Test;

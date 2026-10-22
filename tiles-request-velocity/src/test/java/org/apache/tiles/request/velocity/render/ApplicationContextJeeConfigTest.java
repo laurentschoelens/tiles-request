@@ -18,7 +18,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.apache.tiles.request.velocity.render;
+package io.github.laurentschoelens.tiles.request.velocity.render;
 
 import static org.easymock.EasyMock.*;
 import static org.junit.Assert.*;
@@ -27,9 +27,9 @@ import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.servlet.ServletContext;
+import jakarta.servlet.ServletContext;
 
-import org.apache.tiles.request.servlet.ServletApplicationContext;
+import io.github.laurentschoelens.tiles.request.servlet.ServletApplicationContext;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

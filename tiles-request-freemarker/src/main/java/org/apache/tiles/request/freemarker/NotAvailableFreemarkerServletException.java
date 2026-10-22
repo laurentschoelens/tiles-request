@@ -18,9 +18,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.apache.tiles.request.freemarker;
+package io.github.laurentschoelens.tiles.request.freemarker;
 
-import org.apache.tiles.request.NotAvailableFeatureException;
+import io.github.laurentschoelens.tiles.request.NotAvailableFeatureException;
 
 /**
  * Thrown when a the Freemarker servlet is not available.

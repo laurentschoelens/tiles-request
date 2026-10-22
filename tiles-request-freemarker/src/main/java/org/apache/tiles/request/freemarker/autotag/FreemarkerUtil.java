@@ -19,7 +19,7 @@
  * under the License.
  */
 
-package org.apache.tiles.request.freemarker.autotag;
+package io.github.laurentschoelens.tiles.request.freemarker.autotag;
 
 import freemarker.template.TemplateModel;
 import freemarker.template.TemplateModelException;

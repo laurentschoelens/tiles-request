@@ -18,13 +18,13 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.apache.tiles.request.velocity.render;
+package io.github.laurentschoelens.tiles.request.velocity.render;
 
 import java.util.HashMap;
 import java.util.Map;
 
 
-import org.apache.tiles.request.ApplicationContext;
+import io.github.laurentschoelens.tiles.request.ApplicationContext;
 import org.apache.velocity.tools.view.VelocityView;
 
 /**

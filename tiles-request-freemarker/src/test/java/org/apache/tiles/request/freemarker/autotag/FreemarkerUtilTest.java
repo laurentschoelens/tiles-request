@@ -18,7 +18,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.apache.tiles.request.freemarker.autotag;
+package io.github.laurentschoelens.tiles.request.freemarker.autotag;
 
 import static org.easymock.EasyMock.*;
 import static org.junit.Assert.*;
@@ -26,8 +26,8 @@ import static org.junit.Assert.*;
 import java.io.Writer;
 import java.util.HashMap;
 
-import org.apache.tiles.request.freemarker.autotag.FreemarkerAutotagException;
-import org.apache.tiles.request.freemarker.autotag.FreemarkerUtil;
+import io.github.laurentschoelens.tiles.request.freemarker.autotag.FreemarkerAutotagException;
+import io.github.laurentschoelens.tiles.request.freemarker.autotag.FreemarkerUtil;
 import org.junit.Test;
 
 import freemarker.core.Environment;

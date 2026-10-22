@@ -18,15 +18,15 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.apache.tiles.request.portlet;
+package io.github.laurentschoelens.tiles.request.portlet;
 
 import javax.portlet.PortletContext;
 import javax.portlet.RenderRequest;
 import javax.portlet.RenderResponse;
 
-import org.apache.tiles.request.ApplicationContext;
-import org.apache.tiles.request.portlet.delegate.MimeResponseDelegate;
-import org.apache.tiles.request.portlet.delegate.PortletRequestDelegate;
+import io.github.laurentschoelens.tiles.request.ApplicationContext;
+import io.github.laurentschoelens.tiles.request.portlet.delegate.MimeResponseDelegate;
+import io.github.laurentschoelens.tiles.request.portlet.delegate.PortletRequestDelegate;
 
 /**
  * Portlet request for a {@link RenderRequest}.

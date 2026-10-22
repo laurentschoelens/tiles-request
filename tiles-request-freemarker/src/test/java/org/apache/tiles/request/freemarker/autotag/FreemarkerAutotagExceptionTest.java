@@ -19,11 +19,11 @@
  * under the License.
  */
 
-package org.apache.tiles.request.freemarker.autotag;
+package io.github.laurentschoelens.tiles.request.freemarker.autotag;
 
 import static org.junit.Assert.*;
 
-import org.apache.tiles.request.freemarker.autotag.FreemarkerAutotagException;
+import io.github.laurentschoelens.tiles.request.freemarker.autotag.FreemarkerAutotagException;
 import org.junit.Test;
 
 /**

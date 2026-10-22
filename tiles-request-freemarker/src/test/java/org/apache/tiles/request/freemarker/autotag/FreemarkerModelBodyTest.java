@@ -18,14 +18,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.apache.tiles.request.freemarker.autotag;
+package io.github.laurentschoelens.tiles.request.freemarker.autotag;
 
 import static org.easymock.EasyMock.*;
 
 import java.io.IOException;
 import java.io.Writer;
 
-import org.apache.tiles.request.freemarker.autotag.FreemarkerModelBody;
+import io.github.laurentschoelens.tiles.request.freemarker.autotag.FreemarkerModelBody;
 import org.junit.Test;
 
 import freemarker.template.TemplateDirectiveBody;
@@ -39,7 +39,7 @@ import freemarker.template.TemplateException;
 public class FreemarkerModelBodyTest {
 
     /**
-     * Test method for {@link org.apache.tiles.request.freemarker.autotag.FreemarkerModelBody#evaluate(java.io.Writer)}.
+     * Test method for {@link io.github.laurentschoelens.tiles.request.freemarker.autotag.FreemarkerModelBody#evaluate(java.io.Writer)}.
      * @throws IOException If something goes wrong.
      * @throws TemplateException If something goes wrong.
      */
@@ -57,7 +57,7 @@ public class FreemarkerModelBodyTest {
     }
 
     /**
-     * Test method for {@link org.apache.tiles.request.freemarker.autotag.FreemarkerModelBody#evaluate(java.io.Writer)}.
+     * Test method for {@link io.github.laurentschoelens.tiles.request.freemarker.autotag.FreemarkerModelBody#evaluate(java.io.Writer)}.
      * @throws IOException If something goes wrong.
      * @throws TemplateException If something goes wrong.
      */
@@ -72,7 +72,7 @@ public class FreemarkerModelBodyTest {
     }
 
     /**
-     * Test method for {@link org.apache.tiles.request.freemarker.autotag.FreemarkerModelBody#evaluate(java.io.Writer)}.
+     * Test method for {@link io.github.laurentschoelens.tiles.request.freemarker.autotag.FreemarkerModelBody#evaluate(java.io.Writer)}.
      * @throws IOException If something goes wrong.
      * @throws TemplateException If something goes wrong.
      */

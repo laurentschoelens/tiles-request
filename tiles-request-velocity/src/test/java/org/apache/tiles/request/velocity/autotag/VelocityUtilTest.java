@@ -18,14 +18,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.apache.tiles.request.velocity.autotag;
+package io.github.laurentschoelens.tiles.request.velocity.autotag;
 
 import static org.easymock.EasyMock.*;
 import static org.junit.Assert.*;
 
 import java.util.Map;
 
-import org.apache.tiles.request.velocity.autotag.VelocityUtil;
+import io.github.laurentschoelens.tiles.request.velocity.autotag.VelocityUtil;
 import org.apache.velocity.context.InternalContextAdapter;
 import org.apache.velocity.runtime.parser.node.ASTMap;
 import org.apache.velocity.runtime.parser.node.Node;

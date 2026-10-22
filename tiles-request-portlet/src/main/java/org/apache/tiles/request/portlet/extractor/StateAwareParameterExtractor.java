@@ -18,12 +18,12 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.apache.tiles.request.portlet.extractor;
+package io.github.laurentschoelens.tiles.request.portlet.extractor;
 
 import javax.portlet.PortletRequest;
 import javax.portlet.StateAwareResponse;
 
-import org.apache.tiles.request.attribute.HasAddableKeys;
+import io.github.laurentschoelens.tiles.request.attribute.HasAddableKeys;
 
 /**
  * Extracts parameters from a request and allows putting render parameters in a state aware response.

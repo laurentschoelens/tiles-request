@@ -18,7 +18,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.apache.tiles.request.velocity.extractor;
+package io.github.laurentschoelens.tiles.request.velocity.extractor;
 
 import static org.easymock.classextension.EasyMock.*;
 import static org.junit.Assert.*;

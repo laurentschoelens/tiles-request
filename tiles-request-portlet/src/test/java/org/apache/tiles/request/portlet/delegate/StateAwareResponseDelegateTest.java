@@ -18,7 +18,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.apache.tiles.request.portlet.delegate;
+package io.github.laurentschoelens.tiles.request.portlet.delegate;
 
 import static org.junit.Assert.*;
 
@@ -46,7 +46,7 @@ public class StateAwareResponseDelegateTest {
     }
 
     /**
-     * Test method for {@link org.apache.tiles.request.portlet.delegate.StateAwareResponseDelegate#getOutputStream()}.
+     * Test method for {@link io.github.laurentschoelens.tiles.request.portlet.delegate.StateAwareResponseDelegate#getOutputStream()}.
      */
     @Test(expected = UnsupportedOperationException.class)
     public void testGetOutputStream() {
@@ -54,7 +54,7 @@ public class StateAwareResponseDelegateTest {
     }
 
     /**
-     * Test method for {@link org.apache.tiles.request.portlet.delegate.StateAwareResponseDelegate#getPrintWriter()}.
+     * Test method for {@link io.github.laurentschoelens.tiles.request.portlet.delegate.StateAwareResponseDelegate#getPrintWriter()}.
      */
     @Test(expected = UnsupportedOperationException.class)
     public void testGetPrintWriter() {
@@ -62,7 +62,7 @@ public class StateAwareResponseDelegateTest {
     }
 
     /**
-     * Test method for {@link org.apache.tiles.request.portlet.delegate.StateAwareResponseDelegate#getWriter()}.
+     * Test method for {@link io.github.laurentschoelens.tiles.request.portlet.delegate.StateAwareResponseDelegate#getWriter()}.
      */
     @Test(expected = UnsupportedOperationException.class)
     public void testGetWriter() {

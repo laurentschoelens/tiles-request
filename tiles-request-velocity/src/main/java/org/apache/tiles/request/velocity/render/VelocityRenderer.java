@@ -19,15 +19,15 @@
  * under the License.
  */
 
-package org.apache.tiles.request.velocity.render;
+package io.github.laurentschoelens.tiles.request.velocity.render;
 
 import java.io.IOException;
 
-import org.apache.tiles.request.Request;
-import org.apache.tiles.request.render.CannotRenderException;
-import org.apache.tiles.request.render.Renderer;
-import org.apache.tiles.request.servlet.ServletRequest;
-import org.apache.tiles.request.servlet.ServletUtil;
+import io.github.laurentschoelens.tiles.request.Request;
+import io.github.laurentschoelens.tiles.request.render.CannotRenderException;
+import io.github.laurentschoelens.tiles.request.render.Renderer;
+import io.github.laurentschoelens.tiles.request.servlet.ServletRequest;
+import io.github.laurentschoelens.tiles.request.servlet.ServletUtil;
 import org.apache.velocity.Template;
 import org.apache.velocity.context.Context;
 import org.apache.velocity.tools.view.VelocityView;

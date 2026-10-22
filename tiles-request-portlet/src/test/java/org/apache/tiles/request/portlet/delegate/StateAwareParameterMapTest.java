@@ -18,7 +18,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.apache.tiles.request.portlet.delegate;
+package io.github.laurentschoelens.tiles.request.portlet.delegate;
 
 import static org.easymock.EasyMock.*;
 import static org.easymock.classextension.EasyMock.*;
@@ -66,7 +66,7 @@ public class StateAwareParameterMapTest {
     }
 
     /**
-     * Test method for {@link org.apache.tiles.request.portlet.delegate.StateAwareParameterMap#clear()}.
+     * Test method for {@link io.github.laurentschoelens.tiles.request.portlet.delegate.StateAwareParameterMap#clear()}.
      */
     @Test
     public void testClear() {
@@ -103,7 +103,7 @@ public class StateAwareParameterMapTest {
     }
 
     /**
-     * Test method for {@link org.apache.tiles.request.portlet.delegate.StateAwareParameterMap#entrySet()}.
+     * Test method for {@link io.github.laurentschoelens.tiles.request.portlet.delegate.StateAwareParameterMap#entrySet()}.
      */
     @SuppressWarnings("unchecked")
     @Test
@@ -118,7 +118,7 @@ public class StateAwareParameterMapTest {
     }
 
     /**
-     * Test method for {@link org.apache.tiles.request.portlet.delegate.StateAwareParameterMap#get(java.lang.Object)}.
+     * Test method for {@link io.github.laurentschoelens.tiles.request.portlet.delegate.StateAwareParameterMap#get(java.lang.Object)}.
      */
     @Test
     public void testGet() {
@@ -131,7 +131,7 @@ public class StateAwareParameterMapTest {
     }
 
     /**
-     * Test method for {@link org.apache.tiles.request.portlet.delegate.StateAwareParameterMap#isEmpty()}.
+     * Test method for {@link io.github.laurentschoelens.tiles.request.portlet.delegate.StateAwareParameterMap#isEmpty()}.
      */
     @Test
     public void testIsEmpty() {
@@ -143,7 +143,7 @@ public class StateAwareParameterMapTest {
     }
 
     /**
-     * Test method for {@link org.apache.tiles.request.portlet.delegate.StateAwareParameterMap#keySet()}.
+     * Test method for {@link io.github.laurentschoelens.tiles.request.portlet.delegate.StateAwareParameterMap#keySet()}.
      */
     @SuppressWarnings("unchecked")
     @Test
@@ -171,7 +171,7 @@ public class StateAwareParameterMapTest {
     }
 
     /**
-     * Test method for {@link org.apache.tiles.request.portlet.delegate.StateAwareParameterMap#putAll(java.util.Map)}.
+     * Test method for {@link io.github.laurentschoelens.tiles.request.portlet.delegate.StateAwareParameterMap#putAll(java.util.Map)}.
      */
     @SuppressWarnings("unchecked")
     @Test
@@ -198,7 +198,7 @@ public class StateAwareParameterMapTest {
     }
 
     /**
-     * Test method for {@link org.apache.tiles.request.portlet.delegate.StateAwareParameterMap#size()}.
+     * Test method for {@link io.github.laurentschoelens.tiles.request.portlet.delegate.StateAwareParameterMap#size()}.
      */
     @Test
     public void testSize() {
@@ -210,7 +210,7 @@ public class StateAwareParameterMapTest {
     }
 
     /**
-     * Test method for {@link org.apache.tiles.request.portlet.delegate.StateAwareParameterMap#values()}.
+     * Test method for {@link io.github.laurentschoelens.tiles.request.portlet.delegate.StateAwareParameterMap#values()}.
      */
     @SuppressWarnings("unchecked")
     @Test

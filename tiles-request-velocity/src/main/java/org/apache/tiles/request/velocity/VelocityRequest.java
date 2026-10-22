@@ -19,7 +19,7 @@
  * under the License.
  */
 
-package org.apache.tiles.request.velocity;
+package io.github.laurentschoelens.tiles.request.velocity;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -29,17 +29,17 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
-import org.apache.tiles.request.AbstractViewRequest;
-import org.apache.tiles.request.ApplicationContext;
-import org.apache.tiles.request.DispatchRequest;
-import org.apache.tiles.request.servlet.ExternalWriterHttpServletResponse;
-import org.apache.tiles.request.servlet.ServletRequest;
-import org.apache.tiles.request.servlet.ServletUtil;
+import io.github.laurentschoelens.tiles.request.AbstractViewRequest;
+import io.github.laurentschoelens.tiles.request.ApplicationContext;
+import io.github.laurentschoelens.tiles.request.DispatchRequest;
+import io.github.laurentschoelens.tiles.request.servlet.ExternalWriterHttpServletResponse;
+import io.github.laurentschoelens.tiles.request.servlet.ServletRequest;
+import io.github.laurentschoelens.tiles.request.servlet.ServletUtil;
 import org.apache.velocity.context.Context;
 
 /**
@@ -115,7 +115,7 @@ public class VelocityRequest extends AbstractViewRequest {
     /** {@inheritDoc} */
     @Override
     protected void doInclude(String path) throws IOException {
-        ServletRequest servletRequest = org.apache.tiles.request.servlet.ServletUtil.getServletRequest(this);
+        ServletRequest servletRequest = io.github.laurentschoelens.tiles.request.servlet.ServletUtil.getServletRequest(this);
         HttpServletRequest request = servletRequest.getRequest();
         HttpServletResponse response = servletRequest.getResponse();
         RequestDispatcher rd = request.getRequestDispatcher(path);

@@ -21,4 +21,4 @@
 /**
  * Delegations to map all the different types of request and responses.
  */
-package org.apache.tiles.request.portlet.delegate;
+package io.github.laurentschoelens.tiles.request.portlet.delegate;

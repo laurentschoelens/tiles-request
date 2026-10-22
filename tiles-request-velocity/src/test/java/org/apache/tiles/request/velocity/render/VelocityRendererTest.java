@@ -18,7 +18,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.apache.tiles.request.velocity.render;
+package io.github.laurentschoelens.tiles.request.velocity.render;
 
 import static org.easymock.EasyMock.*;
 import static org.easymock.classextension.EasyMock.*;
@@ -27,12 +27,12 @@ import static org.junit.Assert.*;
 import java.io.IOException;
 import java.io.Writer;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
-import org.apache.tiles.request.render.CannotRenderException;
-import org.apache.tiles.request.render.Renderer;
-import org.apache.tiles.request.servlet.ServletRequest;
+import io.github.laurentschoelens.tiles.request.render.CannotRenderException;
+import io.github.laurentschoelens.tiles.request.render.Renderer;
+import io.github.laurentschoelens.tiles.request.servlet.ServletRequest;
 import org.apache.velocity.Template;
 import org.apache.velocity.tools.view.VelocityView;
 import org.apache.velocity.tools.view.ViewToolContext;
@@ -46,7 +46,7 @@ import org.junit.Test;
 public class VelocityRendererTest {
 
     /**
-     * Tests {@link VelocityRenderer#render(String, org.apache.tiles.request.Request)}.
+     * Tests {@link VelocityRenderer#render(String, io.github.laurentschoelens.tiles.request.Request)}.
      * @throws IOException If something goes wrong.
      */
     @Test
@@ -73,7 +73,7 @@ public class VelocityRendererTest {
     }
 
     /**
-     * Tests {@link VelocityRenderer#render(String, org.apache.tiles.request.Request)}.
+     * Tests {@link VelocityRenderer#render(String, io.github.laurentschoelens.tiles.request.Request)}.
      * @throws IOException If something goes wrong.
      */
     @Test(expected = CannotRenderException.class)
@@ -92,7 +92,7 @@ public class VelocityRendererTest {
 
     /**
      * Test method for
-     * {@link VelocityRenderer#isRenderable(String, org.apache.tiles.request.Request)}
+     * {@link VelocityRenderer#isRenderable(String, io.github.laurentschoelens.tiles.request.Request)}
      * .
      */
     @Test

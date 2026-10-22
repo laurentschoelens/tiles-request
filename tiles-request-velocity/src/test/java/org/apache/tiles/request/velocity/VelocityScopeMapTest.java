@@ -18,7 +18,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.apache.tiles.request.velocity;
+package io.github.laurentschoelens.tiles.request.velocity;
 
 import static org.easymock.classextension.EasyMock.*;
 import static org.junit.Assert.*;
@@ -56,7 +56,7 @@ public class VelocityScopeMapTest {
     }
 
     /**
-     * Test method for {@link org.apache.tiles.request.velocity.VelocityScopeMap#containsKey(java.lang.Object)}.
+     * Test method for {@link io.github.laurentschoelens.tiles.request.velocity.VelocityScopeMap#containsKey(java.lang.Object)}.
      */
     @Test
     public void testContainsKey() {
@@ -68,7 +68,7 @@ public class VelocityScopeMapTest {
     }
 
     /**
-     * Test method for {@link org.apache.tiles.request.velocity.VelocityScopeMap#isEmpty()}.
+     * Test method for {@link io.github.laurentschoelens.tiles.request.velocity.VelocityScopeMap#isEmpty()}.
      */
     @Test
     public void testIsEmpty() {
@@ -80,7 +80,7 @@ public class VelocityScopeMapTest {
     }
 
     /**
-     * Test method for {@link org.apache.tiles.request.velocity.VelocityScopeMap#isEmpty()}.
+     * Test method for {@link io.github.laurentschoelens.tiles.request.velocity.VelocityScopeMap#isEmpty()}.
      */
     @Test
     public void testIsEmptyFalse() {
@@ -92,7 +92,7 @@ public class VelocityScopeMapTest {
     }
 
     /**
-     * Test method for {@link org.apache.tiles.request.velocity.VelocityScopeMap#keySet()}.
+     * Test method for {@link io.github.laurentschoelens.tiles.request.velocity.VelocityScopeMap#keySet()}.
      */
     @Test
     public void testKeySet() {
@@ -107,7 +107,7 @@ public class VelocityScopeMapTest {
     }
 
     /**
-     * Test method for {@link org.apache.tiles.request.velocity.VelocityScopeMap#size()}.
+     * Test method for {@link io.github.laurentschoelens.tiles.request.velocity.VelocityScopeMap#size()}.
      */
     @Test
     public void testSize() {
@@ -131,7 +131,7 @@ public class VelocityScopeMapTest {
     }
 
     /**
-     * Test method for {@link org.apache.tiles.request.velocity.VelocityScopeMap#remove(java.lang.Object)}.
+     * Test method for {@link io.github.laurentschoelens.tiles.request.velocity.VelocityScopeMap#remove(java.lang.Object)}.
      */
     @Test
     public void testRemoveObject() {

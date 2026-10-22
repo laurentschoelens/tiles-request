@@ -18,11 +18,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.apache.tiles.request.freemarker.render;
+package io.github.laurentschoelens.tiles.request.freemarker.render;
 
-import javax.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletRequest;
 
-import org.apache.tiles.request.freemarker.servlet.SharedVariableLoaderFreemarkerServlet;
+import io.github.laurentschoelens.tiles.request.freemarker.servlet.SharedVariableLoaderFreemarkerServlet;
 
 /**
  * Extends {@link SharedVariableLoaderFreemarkerServlet} to use the attribute value as the template name.

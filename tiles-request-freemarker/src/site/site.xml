@@ -63,10 +63,12 @@
         <menu ref="reports" />
 
         <footer>
+        <![CDATA[
             <div class="row span12">
                 Apache Tiles, Tiles, Apache, the Apache feather logo, and the Apache Tiles
                 project logos are trademarks of The Apache Software Foundation.
             </div>
+        ]]>
         </footer>
     </body>
 </project>

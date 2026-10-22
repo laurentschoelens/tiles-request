@@ -21,4 +21,4 @@
 /**
  * Extractors to get scopes from Portlet requests.
  */
-package org.apache.tiles.request.portlet.extractor;
+package io.github.laurentschoelens.tiles.request.portlet.extractor;

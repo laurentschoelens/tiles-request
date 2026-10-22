@@ -18,7 +18,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.apache.tiles.request.freemarker;
+package io.github.laurentschoelens.tiles.request.freemarker;
 
 import static org.easymock.EasyMock.*;
 import static org.easymock.classextension.EasyMock.*;
@@ -46,7 +46,7 @@ import freemarker.template.TemplateModelException;
 public class EnvironmentScopeMapTest {
 
     /**
-     * Test method for {@link org.apache.tiles.request.freemarker.EnvironmentScopeMap#keySet()}.
+     * Test method for {@link io.github.laurentschoelens.tiles.request.freemarker.EnvironmentScopeMap#keySet()}.
      */
     @SuppressWarnings("unchecked")
     @Test
@@ -70,7 +70,7 @@ public class EnvironmentScopeMapTest {
 
 
     /**
-     * Test method for {@link org.apache.tiles.request.freemarker.EnvironmentScopeMap#keySet()}.
+     * Test method for {@link io.github.laurentschoelens.tiles.request.freemarker.EnvironmentScopeMap#keySet()}.
      * @throws TemplateModelException If something goes wrong.
      */
     @SuppressWarnings("unchecked")

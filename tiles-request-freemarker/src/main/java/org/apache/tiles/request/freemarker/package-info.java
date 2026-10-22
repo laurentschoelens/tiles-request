@@ -21,4 +21,4 @@
 /**
  * Support for Freemarker's Environment as a request.
  */
-package org.apache.tiles.request.freemarker;
+package io.github.laurentschoelens.tiles.request.freemarker;

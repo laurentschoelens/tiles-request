@@ -19,7 +19,7 @@
  * under the License.
  */
 
-package org.apache.tiles.request.portlet.wildcard;
+package io.github.laurentschoelens.tiles.request.portlet.wildcard;
 
 import java.io.IOException;
 import java.net.URL;
@@ -30,9 +30,9 @@ import java.util.Locale;
 
 import javax.portlet.PortletContext;
 
-import org.apache.tiles.request.ApplicationResource;
-import org.apache.tiles.request.locale.URLApplicationResource;
-import org.apache.tiles.request.portlet.PortletApplicationContext;
+import io.github.laurentschoelens.tiles.request.ApplicationResource;
+import io.github.laurentschoelens.tiles.request.locale.URLApplicationResource;
+import io.github.laurentschoelens.tiles.request.portlet.PortletApplicationContext;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.ResourcePatternResolver;
 import org.springframework.web.portlet.context.PortletContextResourcePatternResolver;

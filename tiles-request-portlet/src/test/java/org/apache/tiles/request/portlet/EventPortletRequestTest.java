@@ -18,7 +18,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.apache.tiles.request.portlet;
+package io.github.laurentschoelens.tiles.request.portlet;
 
 import static org.easymock.classextension.EasyMock.*;
 import static org.junit.Assert.*;
@@ -29,9 +29,9 @@ import javax.portlet.EventRequest;
 import javax.portlet.EventResponse;
 import javax.portlet.PortletContext;
 
-import org.apache.tiles.request.ApplicationContext;
-import org.apache.tiles.request.portlet.delegate.StateAwareRequestDelegate;
-import org.apache.tiles.request.portlet.delegate.StateAwareResponseDelegate;
+import io.github.laurentschoelens.tiles.request.ApplicationContext;
+import io.github.laurentschoelens.tiles.request.portlet.delegate.StateAwareRequestDelegate;
+import io.github.laurentschoelens.tiles.request.portlet.delegate.StateAwareResponseDelegate;
 import org.junit.Test;
 
 /**

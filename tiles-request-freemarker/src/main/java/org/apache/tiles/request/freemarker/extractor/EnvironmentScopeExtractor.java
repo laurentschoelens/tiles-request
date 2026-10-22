@@ -18,13 +18,13 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.apache.tiles.request.freemarker.extractor;
+package io.github.laurentschoelens.tiles.request.freemarker.extractor;
 
 import java.util.Collections;
 import java.util.Enumeration;
 
-import org.apache.tiles.request.attribute.AttributeExtractor;
-import org.apache.tiles.request.freemarker.FreemarkerRequestException;
+import io.github.laurentschoelens.tiles.request.attribute.AttributeExtractor;
+import io.github.laurentschoelens.tiles.request.freemarker.FreemarkerRequestException;
 
 import freemarker.core.Environment;
 import freemarker.template.TemplateModel;

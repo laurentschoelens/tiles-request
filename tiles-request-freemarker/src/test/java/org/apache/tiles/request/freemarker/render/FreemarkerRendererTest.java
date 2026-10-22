@@ -18,7 +18,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.apache.tiles.request.freemarker.render;
+package io.github.laurentschoelens.tiles.request.freemarker.render;
 
 import static org.easymock.EasyMock.*;
 import static org.easymock.classextension.EasyMock.*;
@@ -29,17 +29,17 @@ import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.net.URL;
 
-import javax.servlet.GenericServlet;
-import javax.servlet.ServletConfig;
-import javax.servlet.ServletContext;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.GenericServlet;
+import jakarta.servlet.ServletConfig;
+import jakarta.servlet.ServletContext;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
-import org.apache.tiles.request.ApplicationContext;
-import org.apache.tiles.request.render.CannotRenderException;
-import org.apache.tiles.request.servlet.ServletApplicationContext;
-import org.apache.tiles.request.servlet.ServletRequest;
+import io.github.laurentschoelens.tiles.request.ApplicationContext;
+import io.github.laurentschoelens.tiles.request.render.CannotRenderException;
+import io.github.laurentschoelens.tiles.request.servlet.ServletApplicationContext;
+import io.github.laurentschoelens.tiles.request.servlet.ServletRequest;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -115,7 +115,7 @@ public class FreemarkerRendererTest {
     }
 
     /**
-     * Tests {@link FreemarkerRenderer#render(String, org.apache.tiles.request.Request)}.
+     * Tests {@link FreemarkerRenderer#render(String, io.github.laurentschoelens.tiles.request.Request)}.
      * @throws IOException If something goes wrong.
      * @throws ServletException If something goes wrong.
      */
@@ -179,7 +179,7 @@ public class FreemarkerRendererTest {
     }
 
     /**
-     * Tests {@link FreemarkerRenderer#render(String, org.apache.tiles.request.Request)}.
+     * Tests {@link FreemarkerRenderer#render(String, io.github.laurentschoelens.tiles.request.Request)}.
      * @throws IOException If something goes wrong.
      * @throws ServletException If something goes wrong.
      */
@@ -224,7 +224,7 @@ public class FreemarkerRendererTest {
     /**
      * Test method for
      * {@link FreemarkerRenderer
-     * #isRenderable(Object, org.apache.tiles.Attribute, org.apache.tiles.context.TilesRequestContext)}
+     * #isRenderable(Object, io.github.laurentschoelens.tiles.Attribute, io.github.laurentschoelens.tiles.context.TilesRequestContext)}
      * .
      */
     @Test

@@ -18,7 +18,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.apache.tiles.request.portlet.delegate;
+package io.github.laurentschoelens.tiles.request.portlet.delegate;
 
 import static org.easymock.EasyMock.*;
 import static org.easymock.classextension.EasyMock.*;
@@ -29,7 +29,7 @@ import java.util.Map;
 import javax.portlet.PortletRequest;
 import javax.portlet.StateAwareResponse;
 
-import org.apache.tiles.request.collection.AddableParameterMap;
+import io.github.laurentschoelens.tiles.request.collection.AddableParameterMap;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -66,7 +66,7 @@ public class StateAwareRequestDelegateTest {
     }
 
     /**
-     * Test method for {@link org.apache.tiles.request.portlet.delegate.StateAwareRequestDelegate#getParam()}.
+     * Test method for {@link io.github.laurentschoelens.tiles.request.portlet.delegate.StateAwareRequestDelegate#getParam()}.
      */
     @Test
     public void testGetParam() {
@@ -76,7 +76,7 @@ public class StateAwareRequestDelegateTest {
     }
 
     /**
-     * Test method for {@link org.apache.tiles.request.portlet.delegate.StateAwareRequestDelegate#getParamValues()}.
+     * Test method for {@link io.github.laurentschoelens.tiles.request.portlet.delegate.StateAwareRequestDelegate#getParamValues()}.
      */
     @SuppressWarnings("unchecked")
     @Test

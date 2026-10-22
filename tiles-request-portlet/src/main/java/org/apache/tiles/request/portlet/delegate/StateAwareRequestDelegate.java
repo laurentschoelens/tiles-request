@@ -18,15 +18,15 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.apache.tiles.request.portlet.delegate;
+package io.github.laurentschoelens.tiles.request.portlet.delegate;
 
 import java.util.Map;
 
 import javax.portlet.PortletRequest;
 import javax.portlet.StateAwareResponse;
 
-import org.apache.tiles.request.collection.AddableParameterMap;
-import org.apache.tiles.request.portlet.extractor.StateAwareParameterExtractor;
+import io.github.laurentschoelens.tiles.request.collection.AddableParameterMap;
+import io.github.laurentschoelens.tiles.request.portlet.extractor.StateAwareParameterExtractor;
 
 /**
  * Exposes parameters getting them from a portlet reques and allowing to be put

@@ -18,7 +18,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.apache.tiles.request.portlet.wildcard;
+package io.github.laurentschoelens.tiles.request.portlet.wildcard;
 
 import java.io.File;
 import java.io.IOException;
@@ -33,7 +33,7 @@ import javax.portlet.PortletContext;
 
 import junit.framework.TestCase;
 
-import org.apache.tiles.request.locale.URLApplicationResource;
+import io.github.laurentschoelens.tiles.request.locale.URLApplicationResource;
 import org.easymock.EasyMock;
 
 
@@ -117,7 +117,7 @@ public class WildcardPortletApplicationContextTest extends TestCase {
                 "classpath*:/test.properties").size());
 
         assertEquals(TEST_TEST_SIZE, context.getResources(
-                "classpath*:/org/apache/tiles/request/portlet/wildcard/*Test.class").size());
+                "classpath*:/io/github/laurentschoelens/tiles/request/portlet/wildcard/*Test.class").size());
         EasyMock.verify(portletContext);
     }
 

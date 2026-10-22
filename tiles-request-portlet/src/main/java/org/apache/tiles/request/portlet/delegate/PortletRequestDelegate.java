@@ -18,14 +18,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.apache.tiles.request.portlet.delegate;
+package io.github.laurentschoelens.tiles.request.portlet.delegate;
 
 import java.util.Map;
 
 import javax.portlet.PortletRequest;
 
-import org.apache.tiles.request.collection.ReadOnlyEnumerationMap;
-import org.apache.tiles.request.portlet.extractor.ParameterExtractor;
+import io.github.laurentschoelens.tiles.request.collection.ReadOnlyEnumerationMap;
+import io.github.laurentschoelens.tiles.request.portlet.extractor.ParameterExtractor;
 
 /**
  * Request delegate in case of simple Portlet request.
