@@ -134,7 +134,7 @@ public class ReadOnlyEnumerationMapTest {
         expect(extractor.getValue("two")).andReturn(2);
 
         replay(extractor);
-        assertEquals(new Integer(2), map.get("two"));
+        assertEquals(Integer.valueOf(2), map.get("two"));
         verify(extractor);
     }
 

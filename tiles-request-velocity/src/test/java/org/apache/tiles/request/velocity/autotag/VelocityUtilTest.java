@@ -62,9 +62,9 @@ public class VelocityUtilTest {
      */
     @Test
     public void testGetObject() {
-        assertEquals(new Integer(1), VelocityUtil.getObject(new Integer(1), new Integer(2)));
-        assertEquals(new Integer(1), VelocityUtil.getObject(new Integer(1), null));
-        assertEquals(new Integer(2), VelocityUtil.getObject(null, new Integer(2)));
+        assertEquals(Integer.valueOf(1), VelocityUtil.getObject(Integer.valueOf(1), Integer.valueOf(2)));
+        assertEquals(Integer.valueOf(1), VelocityUtil.getObject(Integer.valueOf(1), null));
+        assertEquals(Integer.valueOf(2), VelocityUtil.getObject(null, Integer.valueOf(2)));
         assertNull(VelocityUtil.getObject(null, null));
     }
 

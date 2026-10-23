@@ -219,7 +219,7 @@ public class ReadOnlyEnumerationMapValuesCollectionTest {
         replay(extractor, keys);
         Iterator<Integer> entryIt = coll.iterator();
         assertTrue(entryIt.hasNext());
-        assertEquals(new Integer(2), entryIt.next());
+        assertEquals(Integer.valueOf(2), entryIt.next());
         verify(extractor, keys);
     }
 

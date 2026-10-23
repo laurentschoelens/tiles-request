@@ -131,7 +131,7 @@ public class ScopeMapTest {
         extractor.removeValue("one");
 
         replay(extractor);
-        assertEquals(new Integer(1), map.remove("one"));
+        assertEquals(Integer.valueOf(1), map.remove("one"));
         verify(extractor);
     }
 }

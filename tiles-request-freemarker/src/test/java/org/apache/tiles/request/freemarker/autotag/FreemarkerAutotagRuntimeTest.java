@@ -138,7 +138,7 @@ public class FreemarkerAutotagRuntimeTest {
         replay(template, rootDataModel, out);
         Environment env = new Environment(template, rootDataModel, out);
         TemplateNumberModel model = createMock(TemplateNumberModel.class);
-        expect(model.getAsNumber()).andReturn(new Integer(42)).anyTimes();
+        expect(model.getAsNumber()).andReturn(Integer.valueOf(42)).anyTimes();
         @SuppressWarnings("unchecked")
         Map<String, TemplateModel> params = createMock(Map.class);
         TemplateDirectiveBody body = createMock(TemplateDirectiveBody.class);
@@ -149,8 +149,8 @@ public class FreemarkerAutotagRuntimeTest {
         runtime.execute(env, params, new TemplateModel[0], body);
         Object notnullParam = runtime.getParameter("notnullParam", Object.class, null);
         Object nullParam = runtime.getParameter("nullParam", Object.class, null);
-        int notnullParamDefault = runtime.getParameter("notnullParam", Integer.class, new Integer(24));
-        int nullParamDefault = runtime.getParameter("nullParam", Integer.class, new Integer(24));
+        int notnullParamDefault = runtime.getParameter("notnullParam", Integer.class, Integer.valueOf(24));
+        int nullParamDefault = runtime.getParameter("nullParam", Integer.class, Integer.valueOf(24));
         assertEquals(42, notnullParam);
         assertEquals(null, nullParam);
         assertEquals(42, notnullParamDefault);

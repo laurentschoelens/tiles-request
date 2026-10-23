@@ -92,15 +92,15 @@ public class VelocityAutotagRuntimeTest {
         Map<String, Object> params = createMock(Map.class);
         expect(node.jjtGetChild(0)).andReturn(astMap);
         expect(astMap.value(context)).andReturn(params);
-        expect(params.get(eq("notnullParam"))).andReturn(new Integer(42)).anyTimes();
+        expect(params.get(eq("notnullParam"))).andReturn(Integer.valueOf(42)).anyTimes();
         expect(params.get(eq("nullParam"))).andReturn(null).anyTimes();
         replay(context, writer, node, astMap, params);
         VelocityAutotagRuntime runtime = new VelocityAutotagRuntime();
         runtime.render(context, writer, node);
         Object notnullParam = runtime.getParameter("notnullParam", Object.class, null);
         Object nullParam = runtime.getParameter("nullParam", Object.class, null);
-        int notnullParamDefault = runtime.getParameter("notnullParam", Integer.class, new Integer(24));
-        int nullParamDefault = runtime.getParameter("nullParam", Integer.class, new Integer(24));
+        int notnullParamDefault = runtime.getParameter("notnullParam", Integer.class, Integer.valueOf(24));
+        int nullParamDefault = runtime.getParameter("nullParam", Integer.class, Integer.valueOf(24));
         assertEquals(42, notnullParam);
         assertEquals(null, nullParam);
         assertEquals(42, notnullParamDefault);
