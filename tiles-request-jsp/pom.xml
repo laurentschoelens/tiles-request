@@ -61,7 +61,7 @@ under the License.
 		<dependency>
 			<groupId>org.apache.tomcat</groupId>
 			<artifactId>tomcat-el-api</artifactId>
-			<version>10.1.7</version>
+			<version>10.1.62</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
