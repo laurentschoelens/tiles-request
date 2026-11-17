@@ -1,6 +1,6 @@
 # Tiles Request
 
-[![Maven Central](https://maven-badges.sml.io/maven-central/io.github.laurentschoelens.tiles/tiles-request/badge.svg)](https://maven-badges.sml.io/maven-central/io.github.laurentschoelens.tiles/tiles-request/)
+[![Maven Central](https://img.shields.io/maven-central/v/io.github.laurentschoelens.tiles/tiles-request)](https://mvnrepository.com/artifact/io.github.laurentschoelens.tiles/tiles-request)
 [![GitHub Actions Status](https://github.com/laurentschoelens/tiles-request/workflows/Tiles%20Request/badge.svg)](https://github.com/laurentschoelens/tiles-request/actions)
 [![CodeQL](https://github.com/laurentschoelens/tiles-request/workflows/CodeQL/badge.svg)](https://github.com/laurentschoelens/tiles-request/actions/workflows/codeql-analysis.yml?query=workflow%3ACodeQL)
 
