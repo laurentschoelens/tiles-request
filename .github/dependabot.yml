@@ -29,7 +29,7 @@ updates:
         versions: [ "[7.0.0,)" ]
       - dependency-name: "org.springframework:spring-jdbc"
         versions: [ "[7.0.0,)" ]
-      - dependency-name: "org.apache.tomcat:tomcat-jasper-el"
+      - dependency-name: "org.apache.tomcat:tomcat-el-api"
         versions: [ "[11.0.0,)" ]
     groups:
       maven-plugins:
