@@ -24,7 +24,7 @@ under the License.
     <parent>
         <groupId>io.github.laurentschoelens.tiles</groupId>
         <artifactId>tiles-master</artifactId>
-        <version>10.1</version>
+        <version>10.2</version>
         <relativePath />
     </parent>
     <groupId>io.github.laurentschoelens.tiles</groupId>
@@ -123,7 +123,8 @@ under the License.
     </build>
 
     <properties>
-        <maven.javadoc.failOnError>false</maven.javadoc.failOnError> <!-- remove with master-8 -->
+        <central.deployment.basename>tiles-request</central.deployment.basename>
+
         <tiles.osgi.symbolicName>io.github.laurentschoelens.${project.artifactId}</tiles.osgi.symbolicName>
         <tiles.osgi.export>io.github.laurentschoelens.tiles.*;version=${project.version}</tiles.osgi.export>
         <tiles.osgi.import>*</tiles.osgi.import>
