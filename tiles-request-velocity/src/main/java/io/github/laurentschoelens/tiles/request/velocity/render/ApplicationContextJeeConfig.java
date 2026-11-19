@@ -32,8 +32,7 @@ import io.github.laurentschoelens.tiles.request.servlet.ServletUtil;
 import org.apache.velocity.tools.view.JeeConfig;
 
 /**
- * Implements JeeConfig to use parameters set through
- * {@link VelocityRenderer#setParameter(String, String)}.
+ * Implements JeeConfig to use parameters.
  *
  * @version $Rev$ $Date$
  */
