@@ -21,14 +21,18 @@
 package io.github.laurentschoelens.tiles.request.freemarker.render;
 
 import static org.easymock.EasyMock.*;
-import static org.easymock.classextension.EasyMock.*;
 import static org.junit.Assert.*;
 
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.net.URL;
+import java.util.Locale;
 
+import freemarker.ext.jakarta.jsp.TaglibFactory;
+import freemarker.ext.jakarta.servlet.HttpRequestHashModel;
+import freemarker.ext.jakarta.servlet.HttpRequestParametersHashModel;
+import freemarker.ext.jakarta.servlet.ServletContextHashModel;
 import jakarta.servlet.GenericServlet;
 import jakarta.servlet.ServletConfig;
 import jakarta.servlet.ServletContext;
@@ -43,9 +47,6 @@ import io.github.laurentschoelens.tiles.request.servlet.ServletRequest;
 import org.junit.Before;
 import org.junit.Test;
 
-import freemarker.ext.servlet.HttpRequestHashModel;
-import freemarker.ext.servlet.HttpRequestParametersHashModel;
-import freemarker.ext.servlet.ServletContextHashModel;
 import freemarker.template.ObjectWrapper;
 
 /**
@@ -137,8 +138,11 @@ public class FreemarkerRendererTest {
         expect(servletContext.getRealPath(isA(String.class))).andReturn(null).anyTimes();
         URL resource = getClass().getResource("/test.ftl");
         expect(servletContext.getResource(isA(String.class))).andReturn(resource).anyTimes();
-        expect(servletContext.getAttribute(ATTR_APPLICATION_MODEL)).andReturn(servletContextHashModel);
-        expect(servletContext.getAttribute(ATTR_JSP_TAGLIBS_MODEL)).andReturn(null);
+        servletContext.setAttribute(eq(ATTR_APPLICATION_MODEL), isA(ServletContextHashModel.class));
+        expectLastCall();
+        servletContext.setAttribute(eq(ATTR_JSP_TAGLIBS_MODEL), isA(TaglibFactory.class));
+        expectLastCall();
+        expect(servletContext.getAttribute("org.eclipse.jetty.server.webapp.ContainerIncludeJarPattern")).andReturn(null).anyTimes();
 
         replay(applicationContext, servletContext, objectWrapper);
 
@@ -162,9 +166,11 @@ public class FreemarkerRendererTest {
         expect(request.getRequest()).andReturn(httpRequest);
         expect(request.getResponse()).andReturn(response);
         expect(request.getPrintWriter()).andReturn(printWriter);
+        expect(httpRequest.getLocale()).andReturn(Locale.getDefault());
         expect(httpRequest.getSession(false)).andReturn(null);
         expect(httpRequest.getAttribute(ATTR_REQUEST_MODEL)).andReturn(requestModel);
         expect(httpRequest.getAttribute(ATTR_REQUEST_PARAMETERS_MODEL)).andReturn(parametersModel);
+        expect(response.getContentType()).andReturn(null).times(2);
         response.setContentType("text/html; charset=ISO-8859-1");
         response.setHeader(eq("Cache-Control"), isA(String.class));
         response.setHeader("Pragma", "no-cache");

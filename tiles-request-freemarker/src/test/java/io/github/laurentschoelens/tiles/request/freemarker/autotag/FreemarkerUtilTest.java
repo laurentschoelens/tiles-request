@@ -26,6 +26,7 @@ import static org.junit.Assert.*;
 import java.io.Writer;
 import java.util.HashMap;
 
+import freemarker.template.Configuration;
 import io.github.laurentschoelens.tiles.request.freemarker.autotag.FreemarkerAutotagException;
 import io.github.laurentschoelens.tiles.request.freemarker.autotag.FreemarkerUtil;
 import org.junit.Test;
@@ -55,8 +56,9 @@ public class FreemarkerUtilTest {
         TemplateHashModel rootDataModel = createMock(TemplateHashModel.class);
         Writer out = createMock(Writer.class);
 
-        expect(model.getAsNumber()).andReturn(Integer.valueOf(42));
-        expect(template.getMacros()).andReturn(new HashMap<String, Macro>());
+        expect(model.getAsNumber()).andReturn(42);
+        expect(template.getConfiguration()).andReturn(new Configuration(Configuration.VERSION_2_3_35));
+        expect(template.getMacros()).andReturn(new HashMap<>());
 
         replay(template, rootDataModel, out);
         new Environment(template, rootDataModel, out);
@@ -76,7 +78,8 @@ public class FreemarkerUtilTest {
         TemplateHashModel rootDataModel = createMock(TemplateHashModel.class);
         Writer out = createMock(Writer.class);
 
-        expect(template.getMacros()).andReturn(new HashMap<String, Macro>());
+        expect(template.getConfiguration()).andReturn(new Configuration(Configuration.VERSION_2_3_35));
+        expect(template.getMacros()).andReturn(new HashMap<>());
 
         replay(template, rootDataModel, out);
         new Environment(template, rootDataModel, out);
@@ -97,7 +100,8 @@ public class FreemarkerUtilTest {
         Writer out = createMock(Writer.class);
 
         expect(model.getAsNumber()).andThrow(new TemplateModelException());
-        expect(template.getMacros()).andReturn(new HashMap<String, Macro>());
+        expect(template.getConfiguration()).andReturn(new Configuration(Configuration.VERSION_2_3_35));
+        expect(template.getMacros()).andReturn(new HashMap<>());
 
         replay(template, rootDataModel, out);
         new Environment(template, rootDataModel, out);

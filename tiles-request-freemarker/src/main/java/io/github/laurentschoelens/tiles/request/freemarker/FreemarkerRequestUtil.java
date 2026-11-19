@@ -20,13 +20,13 @@
  */
 package io.github.laurentschoelens.tiles.request.freemarker;
 
+import freemarker.ext.jakarta.servlet.FreemarkerServlet;
+import freemarker.ext.jakarta.servlet.HttpRequestHashModel;
+import freemarker.ext.jakarta.servlet.ServletContextHashModel;
 import io.github.laurentschoelens.tiles.request.ApplicationContext;
 import io.github.laurentschoelens.tiles.request.servlet.ServletUtil;
 
 import freemarker.core.Environment;
-import freemarker.ext.servlet.FreemarkerServlet;
-import freemarker.ext.servlet.HttpRequestHashModel;
-import freemarker.ext.servlet.ServletContextHashModel;
 import freemarker.template.TemplateModelException;
 
 /**

@@ -21,13 +21,15 @@
 package io.github.laurentschoelens.tiles.request.freemarker;
 
 import static org.easymock.EasyMock.*;
-import static org.easymock.classextension.EasyMock.*;
 import static org.junit.Assert.*;
 
 import java.io.StringWriter;
 import java.util.HashMap;
 import java.util.Locale;
 
+import freemarker.ext.jakarta.servlet.HttpRequestHashModel;
+import freemarker.ext.jakarta.servlet.ServletContextHashModel;
+import freemarker.template.Configuration;
 import jakarta.servlet.GenericServlet;
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.http.HttpServletRequest;
@@ -38,8 +40,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import freemarker.core.Environment;
-import freemarker.ext.servlet.HttpRequestHashModel;
-import freemarker.ext.servlet.ServletContextHashModel;
 import freemarker.template.ObjectWrapper;
 import freemarker.template.Template;
 import freemarker.template.TemplateHashModel;
@@ -84,7 +84,9 @@ public class FreemarkerRequestUtilTest {
         template = createMock(Template.class);
         model = createMock(TemplateHashModel.class);
         writer = new StringWriter();
-        expect(template.getMacros()).andReturn(new HashMap<Object, Object>());
+        expect(template.getConfiguration()).andReturn(new Configuration(Configuration.VERSION_2_3_35));
+        expect(template.getMacros()).andReturn(new HashMap<>());
+        expect(template.getLocale()).andReturn(Locale.getDefault());
     }
 
     /**

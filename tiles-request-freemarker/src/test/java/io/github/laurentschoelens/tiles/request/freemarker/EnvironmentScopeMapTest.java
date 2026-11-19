@@ -27,6 +27,7 @@ import static org.junit.Assert.*;
 import java.io.StringWriter;
 import java.io.Writer;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Set;
 
 import org.junit.Test;
@@ -57,9 +58,11 @@ public class EnvironmentScopeMapTest {
         Set<String> names = createMock(Set.class);
         Writer writer = new StringWriter();
 
-        expect(template.getMacros()).andReturn(new HashMap<Object, Object>());
+        expect(template.getMacros()).andReturn(new HashMap<>());
+
         expect(template.getConfiguration()).andReturn(configuration);
         expect(configuration.getSharedVariableNames()).andReturn(names);
+        expect(configuration.getIncompatibleImprovements()).andReturn(Configuration.DEFAULT_INCOMPATIBLE_IMPROVEMENTS).anyTimes();
 
         replay(template, model, configuration, names);
         Environment env = new Environment(template, model, writer);
@@ -82,10 +85,11 @@ public class EnvironmentScopeMapTest {
         Set<String> names = createMock(Set.class);
         Writer writer = new StringWriter();
 
-        expect(template.getMacros()).andReturn(new HashMap<Object, Object>());
+        expect(template.getMacros()).andReturn(new HashMap<>());
         expect(model.keys()).andThrow(new TemplateModelException());
         expect(template.getConfiguration()).andReturn(configuration);
         expect(configuration.getSharedVariableNames()).andReturn(names);
+        expect(configuration.getIncompatibleImprovements()).andReturn(Configuration.DEFAULT_INCOMPATIBLE_IMPROVEMENTS).anyTimes();
 
         try {
             replay(template, model, configuration, names);

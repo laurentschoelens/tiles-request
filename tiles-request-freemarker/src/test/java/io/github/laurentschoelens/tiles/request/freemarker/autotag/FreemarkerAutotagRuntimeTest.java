@@ -27,6 +27,11 @@ import java.io.IOException;
 import java.io.Writer;
 import java.util.HashMap;
 import java.util.Map;
+
+import freemarker.ext.jakarta.servlet.FreemarkerServlet;
+import freemarker.ext.jakarta.servlet.HttpRequestHashModel;
+import freemarker.ext.jakarta.servlet.ServletContextHashModel;
+import freemarker.template.Configuration;
 import jakarta.servlet.GenericServlet;
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.http.HttpServletRequest;
@@ -37,14 +42,9 @@ import io.github.laurentschoelens.tiles.request.ApplicationAccess;
 import io.github.laurentschoelens.tiles.request.ApplicationContext;
 import io.github.laurentschoelens.tiles.request.Request;
 import io.github.laurentschoelens.tiles.request.freemarker.FreemarkerRequest;
-import io.github.laurentschoelens.tiles.request.freemarker.autotag.FreemarkerAutotagRuntime;
-import io.github.laurentschoelens.tiles.request.freemarker.autotag.FreemarkerModelBody;
 import org.junit.Test;
 import freemarker.core.Environment;
 import freemarker.core.Macro;
-import freemarker.ext.servlet.FreemarkerServlet;
-import freemarker.ext.servlet.HttpRequestHashModel;
-import freemarker.ext.servlet.ServletContextHashModel;
 import freemarker.template.ObjectWrapper;
 import freemarker.template.Template;
 import freemarker.template.TemplateDirectiveBody;
@@ -75,7 +75,8 @@ public class FreemarkerAutotagRuntimeTest {
         HttpServletRequest httpServletRequest = createMock(HttpServletRequest.class);
         HttpServletResponse httpServletResponse = createMock(HttpServletResponse.class);
 
-        expect(template.getMacros()).andReturn(new HashMap<String, Macro>());
+        expect(template.getConfiguration()).andReturn(new Configuration(Configuration.VERSION_2_3_35));
+        expect(template.getMacros()).andReturn(new HashMap<>());
         expect(servlet.getServletContext()).andReturn(servletContext)
                 .anyTimes();
         expect(
@@ -115,7 +116,8 @@ public class FreemarkerAutotagRuntimeTest {
         Template template = createMock(Template.class);
         TemplateHashModel rootDataModel = createMock(TemplateHashModel.class);
         Writer out = createMock(Writer.class);
-        expect(template.getMacros()).andReturn(new HashMap<String, Macro>());
+        expect(template.getConfiguration()).andReturn(new Configuration(Configuration.VERSION_2_3_35));
+        expect(template.getMacros()).andReturn(new HashMap<>());
         replay(template, rootDataModel, out);
         Environment env = new Environment(template, rootDataModel, out);
         @SuppressWarnings("unchecked")
@@ -134,7 +136,8 @@ public class FreemarkerAutotagRuntimeTest {
         Template template = createMock(Template.class);
         TemplateHashModel rootDataModel = createMock(TemplateHashModel.class);
         Writer out = createMock(Writer.class);
-        expect(template.getMacros()).andReturn(new HashMap<String, Macro>());
+        expect(template.getConfiguration()).andReturn(new Configuration(Configuration.VERSION_2_3_35));
+        expect(template.getMacros()).andReturn(new HashMap<>());
         replay(template, rootDataModel, out);
         Environment env = new Environment(template, rootDataModel, out);
         TemplateNumberModel model = createMock(TemplateNumberModel.class);
