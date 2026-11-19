@@ -38,8 +38,6 @@ import io.github.laurentschoelens.tiles.request.servlet.ServletRequest;
  * FreeMarker renderer for rendering FreeMarker templates as Tiles attributes.
  * It is only usable under a Servlet environment, because it uses
  * {@link AttributeValueFreemarkerServlet} internally to forward the request.<br/>
- * To initialize it correctly, call {@link #setParameter(String, String)} for all the
- * parameters that you want to set, and then call {@link #commit()}.
  *
  * @version $Rev$ $Date$
  */

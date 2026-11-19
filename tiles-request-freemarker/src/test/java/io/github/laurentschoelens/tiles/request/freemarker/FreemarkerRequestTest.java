@@ -32,6 +32,12 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 
+import freemarker.ext.jakarta.servlet.HttpRequestHashModel;
+import freemarker.template.Configuration;
+import freemarker.template.ObjectWrapper;
+import freemarker.template.Template;
+import freemarker.template.TemplateHashModel;
+import freemarker.template.TemplateModelException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
@@ -43,11 +49,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import freemarker.core.Environment;
-import freemarker.ext.servlet.HttpRequestHashModel;
-import freemarker.template.ObjectWrapper;
-import freemarker.template.Template;
-import freemarker.template.TemplateHashModel;
-import freemarker.template.TemplateModelException;
 
 /**
  * Tests {@link FreemarkerRequest}.
@@ -84,7 +85,9 @@ public class FreemarkerRequestTest {
         Template template = createMock(Template.class);
         TemplateHashModel model = createMock(TemplateHashModel.class);
         writer = new StringWriter();
-        expect(template.getMacros()).andReturn(new HashMap<Object, Object>());
+        expect(template.getConfiguration()).andReturn(new Configuration(Configuration.VERSION_2_3_35));
+        expect(template.getMacros()).andReturn(new HashMap<>());
+        expect(template.getLocale()).andReturn(Locale.getDefault());
         replay(template, model);
         env = new Environment(template, model, writer);
         locale = Locale.ITALY;
@@ -105,7 +108,9 @@ public class FreemarkerRequestTest {
         ObjectWrapper objectWrapper = createMock(ObjectWrapper.class);
         ApplicationContext applicationContext = createMock(ApplicationContext.class);
 
-        expect(template.getMacros()).andReturn(new HashMap<Object, Object>());
+        expect(template.getConfiguration()).andReturn(new Configuration(Configuration.VERSION_2_3_35));
+        expect(template.getMacros()).andReturn(new HashMap<>());
+        expect(template.getLocale()).andReturn(Locale.getDefault());
 
         replay(httpRequest, httpResponse, objectWrapper);
         HttpRequestHashModel requestHashModel = new HttpRequestHashModel(httpRequest, httpResponse, objectWrapper);
@@ -232,7 +237,9 @@ public class FreemarkerRequestTest {
         Template template = createMock(Template.class);
         TemplateHashModel model = createMock(TemplateHashModel.class);
         PrintWriter writer = new PrintWriter(new StringWriter());
-        expect(template.getMacros()).andReturn(new HashMap<Object, Object>());
+        expect(template.getConfiguration()).andReturn(new Configuration(Configuration.VERSION_2_3_35));
+        expect(template.getMacros()).andReturn(new HashMap<>());
+        expect(template.getLocale()).andReturn(Locale.getDefault());
         replay(template, model);
         Environment env = new Environment(template, model, writer);
         Locale locale = Locale.ITALY;

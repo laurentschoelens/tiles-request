@@ -24,11 +24,11 @@ package io.github.laurentschoelens.tiles.request.freemarker.servlet;
 import java.io.IOException;
 import java.io.Reader;
 
+import freemarker.ext.jakarta.servlet.WebappTemplateLoader;
 import jakarta.servlet.ServletContext;
 
 import freemarker.cache.ClassTemplateLoader;
 import freemarker.cache.TemplateLoader;
-import freemarker.cache.WebappTemplateLoader;
 
 /**
  * Delegates loading templates using a {@link WebappTemplateLoader} and, if not

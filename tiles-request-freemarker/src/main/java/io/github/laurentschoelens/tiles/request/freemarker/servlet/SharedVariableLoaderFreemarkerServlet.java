@@ -25,6 +25,7 @@ import java.util.Enumeration;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+import freemarker.ext.jakarta.servlet.FreemarkerServlet;
 import jakarta.servlet.ServletConfig;
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
@@ -32,7 +33,6 @@ import jakarta.servlet.ServletException;
 import io.github.laurentschoelens.tiles.request.reflect.ClassUtil;
 
 import freemarker.cache.TemplateLoader;
-import freemarker.ext.servlet.FreemarkerServlet;
 import freemarker.template.Configuration;
 
 /**
@@ -125,7 +125,7 @@ public class SharedVariableLoaderFreemarkerServlet extends FreemarkerServlet {
          *
          * @param config The servlet configuration.
          */
-        public ExcludingParameterServletConfig(ServletConfig config) {
+        ExcludingParameterServletConfig(ServletConfig config) {
             this.config = config;
         }
 
@@ -177,7 +177,7 @@ public class SharedVariableLoaderFreemarkerServlet extends FreemarkerServlet {
          *
          * @param enumeration The original enumeration.
          */
-        public SkippingEnumeration(Enumeration<String> enumeration) {
+        SkippingEnumeration(Enumeration<String> enumeration) {
             this.enumeration = enumeration;
             updateNextElement();
         }

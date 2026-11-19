@@ -31,8 +31,7 @@ import jakarta.servlet.ServletContext;
 import io.github.laurentschoelens.tiles.request.ApplicationContext;
 
 /**
- * Implements {@link ServletConfig} to initialize the internal servlet using parameters
- * set through {@link FreemarkerRenderer#setParameter(String, String)}.
+ * Implements {@link ServletConfig} to initialize the internal servlet using parameters.
  *
  * @version $Rev$ $Date$
  */
@@ -41,7 +40,7 @@ public class InitParamsServletConfig implements ServletConfig {
     /**
      * The initialization parameters.
      */
-    private Map<String, String> params = new HashMap<String, String>();
+    private Map<String, String> params = new HashMap<>();
 
     /**
      * The application context.

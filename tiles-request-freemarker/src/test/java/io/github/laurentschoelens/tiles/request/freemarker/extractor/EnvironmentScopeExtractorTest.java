@@ -21,7 +21,6 @@
 package io.github.laurentschoelens.tiles.request.freemarker.extractor;
 
 import static org.easymock.EasyMock.*;
-import static org.easymock.classextension.EasyMock.*;
 import static org.junit.Assert.*;
 
 import java.io.StringWriter;
@@ -64,9 +63,10 @@ public class EnvironmentScopeExtractorTest {
         Configuration configuration = createMock(Configuration.class);
         Writer writer = new StringWriter();
 
-        expect(template.getMacros()).andReturn(new HashMap<Object, Object>());
+        expect(template.getMacros()).andReturn(new HashMap<>());
         expect(model.get("key")).andReturn(null);
         expect(template.getConfiguration()).andReturn(configuration);
+        expect(configuration.getIncompatibleImprovements()).andReturn(Configuration.DEFAULT_INCOMPATIBLE_IMPROVEMENTS).anyTimes();
         expect(configuration.getSharedVariable("key")).andReturn(null);
 
         replay(template, model, valueModel, configuration);
@@ -92,9 +92,10 @@ public class EnvironmentScopeExtractorTest {
 
         Writer writer = new StringWriter();
 
-        expect(template.getMacros()).andReturn(new HashMap<Object, Object>());
+        expect(template.getMacros()).andReturn(new HashMap<>());
         expect(template.getConfiguration()).andReturn(configuration);
         expect(configuration.getSharedVariableNames()).andReturn(names);
+        expect(configuration.getIncompatibleImprovements()).andReturn(Configuration.DEFAULT_INCOMPATIBLE_IMPROVEMENTS).anyTimes();
 
         replay(template, model, valueModel, configuration);
         Environment env = new Environment(template, model, writer);
@@ -120,10 +121,11 @@ public class EnvironmentScopeExtractorTest {
         Iterator<String> namesIt = createMock(Iterator.class);
         Writer writer = new StringWriter();
 
-        expect(template.getMacros()).andReturn(new HashMap<Object, Object>());
+        expect(template.getMacros()).andReturn(new HashMap<>());
         expect(model.keys()).andThrow(new TemplateModelException());
         expect(template.getConfiguration()).andReturn(configuration);
         expect(configuration.getSharedVariableNames()).andReturn(names);
+        expect(configuration.getIncompatibleImprovements()).andReturn(Configuration.DEFAULT_INCOMPATIBLE_IMPROVEMENTS).anyTimes();
 
         replay(template, model, valueModel, configuration, names, namesIt);
         try {
@@ -148,7 +150,8 @@ public class EnvironmentScopeExtractorTest {
         ObjectWrapper objectWrapper = createMock(ObjectWrapper.class);
         Writer writer = new StringWriter();
 
-        expect(template.getMacros()).andReturn(new HashMap<Object, Object>());
+        expect(template.getConfiguration()).andReturn(new Configuration(Configuration.VERSION_2_3_35));
+        expect(template.getMacros()).andReturn(new HashMap<>());
         expect(valueModel.getAsString()).andReturn("value");
 
         replay(template, model, valueModel, configuration, objectWrapper);
@@ -172,10 +175,11 @@ public class EnvironmentScopeExtractorTest {
         ObjectWrapper objectWrapper = createMock(ObjectWrapper.class);
         Writer writer = new StringWriter();
 
-        expect(template.getMacros()).andReturn(new HashMap<Object, Object>());
+        expect(template.getMacros()).andReturn(new HashMap<>());
         expect(model.get("key")).andReturn(null);
         expect(template.getConfiguration()).andReturn(configuration);
         expect(configuration.getSharedVariable("key")).andReturn(null);
+        expect(configuration.getIncompatibleImprovements()).andReturn(Configuration.DEFAULT_INCOMPATIBLE_IMPROVEMENTS).anyTimes();
 
         replay(template, model, valueModel, configuration, objectWrapper);
         Environment env = new Environment(template, model, writer);
@@ -197,7 +201,8 @@ public class EnvironmentScopeExtractorTest {
         ObjectWrapper objectWrapper = createMock(ObjectWrapper.class);
         Writer writer = new StringWriter();
 
-        expect(template.getMacros()).andReturn(new HashMap<Object, Object>());
+        expect(template.getConfiguration()).andReturn(new Configuration(Configuration.VERSION_2_3_35));
+        expect(template.getMacros()).andReturn(new HashMap<>());
         expect(model.get("key")).andThrow(new TemplateModelException());
 
         replay(template, model, valueModel, configuration, objectWrapper);
@@ -223,7 +228,8 @@ public class EnvironmentScopeExtractorTest {
         ObjectWrapper objectWrapper = createMock(ObjectWrapper.class);
         Writer writer = new StringWriter();
 
-        expect(template.getMacros()).andReturn(new HashMap<Object, Object>());
+        expect(template.getConfiguration()).andReturn(new Configuration(Configuration.VERSION_2_3_35));
+        expect(template.getMacros()).andReturn(new HashMap<>());
         expect(template.getObjectWrapper()).andReturn(objectWrapper);
         expect(objectWrapper.wrap("value")).andReturn(valueModel);
 
@@ -248,7 +254,8 @@ public class EnvironmentScopeExtractorTest {
         ObjectWrapper objectWrapper = createMock(ObjectWrapper.class);
         Writer writer = new StringWriter();
 
-        expect(template.getMacros()).andReturn(new HashMap<Object, Object>());
+        expect(template.getConfiguration()).andReturn(new Configuration(Configuration.VERSION_2_3_35));
+        expect(template.getMacros()).andReturn(new HashMap<>());
         expect(template.getObjectWrapper()).andReturn(objectWrapper);
         expect(objectWrapper.wrap("value")).andThrow(new TemplateModelException());
 
