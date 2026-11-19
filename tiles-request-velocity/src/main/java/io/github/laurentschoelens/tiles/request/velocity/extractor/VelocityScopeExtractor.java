@@ -86,7 +86,7 @@ public class VelocityScopeExtractor implements AttributeExtractor {
          *
          * @param keys The array to enumerate.
          */
-        public KeyEnumeration(Object[] keys) {
+        KeyEnumeration(Object[] keys) {
             this.keys = keys;
         }
 

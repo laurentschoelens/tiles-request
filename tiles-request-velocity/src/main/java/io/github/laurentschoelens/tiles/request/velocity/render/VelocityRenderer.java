@@ -36,8 +36,6 @@ import org.apache.velocity.tools.view.VelocityView;
  * Attribute renderer for rendering Velocity templates as attributes. <br>
  * It is available only to Servlet-based environment.<br>
  * It uses {@link VelocityView} to render the response.<br>
- * To initialize it correctly, call {@link #setParameter(String, String)} for
- * all the parameters that you want to set, and then call {@link #commit()}.
  *
  * @version $Rev$ $Date$
  */
@@ -46,7 +44,7 @@ public class VelocityRenderer implements Renderer {
     /**
      * The VelocityView object to use.
      */
-    private VelocityView velocityView;
+    private final VelocityView velocityView;
 
     /**
      * Constructor.
@@ -70,7 +68,7 @@ public class VelocityRenderer implements Renderer {
                 .getRequest(), servletRequest.getResponse());
 
         // get the template
-        Template template = velocityView.getTemplate((String) path);
+        Template template = velocityView.getTemplate(path);
 
         // merge the template and context into the writer
         velocityView.merge(template, context, request.getWriter());

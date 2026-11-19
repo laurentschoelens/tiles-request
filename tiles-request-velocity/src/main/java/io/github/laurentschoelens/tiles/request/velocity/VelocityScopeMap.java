@@ -23,6 +23,7 @@ package io.github.laurentschoelens.tiles.request.velocity;
 import java.util.HashSet;
 import java.util.Set;
 
+import io.github.laurentschoelens.tiles.request.collection.CollectionUtil;
 import io.github.laurentschoelens.tiles.request.collection.ScopeMap;
 import io.github.laurentschoelens.tiles.request.velocity.extractor.VelocityScopeExtractor;
 import org.apache.velocity.context.Context;
@@ -46,14 +47,14 @@ final class VelocityScopeMap extends ScopeMap {
      *
      * @param request The request object to use.
      */
-    public VelocityScopeMap(Context request) {
+    VelocityScopeMap(Context request) {
         super(new VelocityScopeExtractor(request));
         this.request = request;
     }
 
     @Override
     public Object remove(Object key) {
-        return request.remove(key);
+        return request.remove(CollectionUtil.key(key));
     }
 
     @Override
@@ -63,7 +64,7 @@ final class VelocityScopeMap extends ScopeMap {
 
     /** {@inheritDoc} */
     public boolean containsKey(Object key) {
-        return request.containsKey(key);
+        return request.containsKey(CollectionUtil.key(key));
     }
 
 
