@@ -17,6 +17,8 @@
  * KIND, either express or implied. See the License for the
  * specific language governing permissions and limitations
  * under the License.
+ *
+ * Modified by Laurent Schoelens, 2026
  */
 /**
  * Methods to get, set and remove attributes from different sources (like HTTP requests
