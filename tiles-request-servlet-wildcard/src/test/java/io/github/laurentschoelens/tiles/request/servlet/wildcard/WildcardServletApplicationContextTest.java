@@ -24,14 +24,21 @@ package io.github.laurentschoelens.tiles.request.servlet.wildcard;
 
 import junit.framework.TestCase;
 
+import io.github.laurentschoelens.tiles.request.ApplicationResource;
 import io.github.laurentschoelens.tiles.request.locale.URLApplicationResource;
 import org.easymock.EasyMock;
 
 import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
+import java.net.URI;
 import java.net.URL;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Enumeration;
+import java.util.LinkedHashSet;
+import java.util.Locale;
 import java.util.Set;
 import java.util.Vector;
 import java.util.HashSet;
@@ -86,32 +93,29 @@ public class WildcardServletApplicationContextTest extends TestCase {
     }
 
     /**
-     * Tests resource getting.
+     * Tests resource getting (legacy test).
      *
      * @throws IOException If something goes wrong.
      */
     public void testGetResources() throws IOException {
         String url = "/test.properties";
-        HashSet<URL> set = new HashSet<URL>();
-        URL u = new URL("file://tiles/test.properties");
-        set.add(u);
-        EasyMock.expect(servletContext.getResource(url)).andReturn(u)
-                .anyTimes();
+        URL u = URI.create("file:///tiles/test.properties").toURL();
+        EasyMock.expect(servletContext.getResource(url)).andReturn(u).anyTimes();
+
         File dir = new File(".");
-        EasyMock.expect(servletContext.getResource("/WEB-INF/")).andReturn(
-                dir.toURI().toURL()).anyTimes();
-        URL pomUrl = new URL("file://tiles/pom.xml");
-        EasyMock.expect(servletContext.getResource("/WEB-INF/pom.xml"))
-                .andReturn(pomUrl).anyTimes();
-        Set<String> elementSet = new HashSet<String>();
+        EasyMock.expect(servletContext.getResource("/WEB-INF/")).andReturn(dir.toURI().toURL()).anyTimes();
+
+        URL pomUrl = URI.create("file:///tiles/pom.xml").toURL();
+        EasyMock.expect(servletContext.getResource("/WEB-INF/pom.xml")).andReturn(pomUrl).anyTimes();
+
+        Set<String> elementSet = new HashSet<>();
         elementSet.add("/WEB-INF/pom.xml");
         EasyMock.expect(servletContext.getResourcePaths("/WEB-INF/")).andReturn(elementSet).anyTimes();
         EasyMock.replay(servletContext);
 
         assertEquals(new URLApplicationResource(u.toExternalForm(), u), context.getResource(url));
         assertEquals(new URLApplicationResource(pomUrl.toExternalForm(), pomUrl), context.getResource("/WEB-INF/*.xml"));
-        assertEquals(TEST_PROPERTIES_SIZE, context.getResources(
-                "classpath*:/test.properties").size());
+        assertEquals(TEST_PROPERTIES_SIZE, context.getResources("classpath*:/test.properties").size());
 
         assertEquals(1, context.getResources(
                 "classpath*:/io/github/laurentschoelens/tiles/request/servlet/wildcard/*Test.class").size());
@@ -119,39 +123,169 @@ public class WildcardServletApplicationContextTest extends TestCase {
     }
 
     /**
-     * An mock class loader.
+     * Tests recursive wildcard scanning (** and ?) inside ServletContext subdirectories.
+     *
+     * @throws IOException If something goes wrong.
      */
-    public class MockClassLoader extends ClassLoader {
+    public void testServletContextRecursiveWildcards() throws IOException {
+        Set<String> webInfPaths = new LinkedHashSet<>(Arrays.asList(
+                "/WEB-INF/tiles-defs.xml",
+                "/WEB-INF/sub/",
+                "/WEB-INF/ignored.txt"
+        ));
+        Set<String> subPaths = new LinkedHashSet<>(Arrays.asList(
+                "/WEB-INF/sub/tiles-sub1.xml",
+                "/WEB-INF/sub/tiles-sub2.xml"
+        ));
+
+        URL rootDef = URI.create("file:///tiles/WEB-INF/tiles-defs.xml").toURL();
+        URL subDef1 = URI.create("file:///tiles/WEB-INF/sub/tiles-sub1.xml").toURL();
+        URL subDef2 = URI.create("file:///tiles/WEB-INF/sub/tiles-sub2.xml").toURL();
+
+        EasyMock.expect(servletContext.getResourcePaths("/WEB-INF/")).andReturn(webInfPaths).anyTimes();
+        EasyMock.expect(servletContext.getResourcePaths("/WEB-INF/sub/")).andReturn(subPaths).anyTimes();
+        EasyMock.expect(servletContext.getResource("/WEB-INF/tiles-defs.xml")).andReturn(rootDef).anyTimes();
+        EasyMock.expect(servletContext.getResource("/WEB-INF/sub/tiles-sub1.xml")).andReturn(subDef1).anyTimes();
+        EasyMock.expect(servletContext.getResource("/WEB-INF/sub/tiles-sub2.xml")).andReturn(subDef2).anyTimes();
+        EasyMock.replay(servletContext);
+
+        Collection<ApplicationResource> allXmls = context.getResources("/WEB-INF/**/tiles*.xml");
+        assertEquals(3, allXmls.size());
+
+        Collection<ApplicationResource> singleCharMatch = context.getResources("/WEB-INF/sub/tiles-sub?.xml");
+        assertEquals(2, singleCharMatch.size());
+
+        EasyMock.verify(servletContext);
+    }
+
+    /**
+     * Tests single classpath: prefix resolution (exact and wildcard) as well as JAR scanning.
+     */
+    public void testClasspathAndJarResources() {
+        EasyMock.replay(servletContext);
+
+        // Exact classpath: lookup returns only the first resource
+        Collection<ApplicationResource> singleProp = context.getResources("classpath:test.properties");
+        assertEquals(1, singleProp.size());
+
+        // Wildcard classpath: lookup on compiled classes
+        Collection<ApplicationResource> classMatch = context.getResources(
+                "classpath:io/github/laurentschoelens/tiles/request/servlet/wildcard/*Test.class");
+        assertEquals(1, classMatch.size());
+
+        // Wildcard scanning inside a dependency JAR (EasyMock is on test classpath)
+        Collection<ApplicationResource> jarClasses = context.getResources("classpath*:/org/easymock/*.class");
+        assertFalse("Should find classes inside EasyMock JAR", jarClasses.isEmpty());
+
+        EasyMock.verify(servletContext);
+    }
+
+    /**
+     * Tests localized resource resolution via {@link WildcardServletApplicationContext#getResource(ApplicationResource, Locale)}.
+     *
+     * @throws IOException If something goes wrong.
+     */
+    public void testGetLocalizedResource() throws IOException {
+        URL baseUrl = URI.create("file:///tiles/WEB-INF/tiles.xml").toURL();
+        URL frUrl = URI.create("file:///tiles/WEB-INF/tiles_fr.xml").toURL();
+
+        EasyMock.expect(servletContext.getResource("/WEB-INF/tiles_fr.xml")).andReturn(frUrl);
+        EasyMock.replay(servletContext);
+
+        ApplicationResource baseResource = new URLApplicationResource("/WEB-INF/tiles.xml", baseUrl);
+        ApplicationResource localized = context.getResource(baseResource, Locale.FRENCH);
+
+        assertNotNull(localized);
+        assertEquals(new URLApplicationResource(frUrl.toExternalForm(), frUrl), localized);
+        EasyMock.verify(servletContext);
+    }
+
+    /**
+     * Tests URLs containing unencoded spaces (e.g. Windows paths) and edge cases (null, empty, missing, IOException).
+     *
+     * @throws IOException If something goes wrong.
+     */
+    public void testEdgeCasesAndUnencodedSpaces() throws IOException {
+        // URL with unencoded space
+        URL spacedUrl = new URL("file:///tiles spaces/webapps/app/WEB-INF/tiles.xml");
+        EasyMock.expect(servletContext.getResourcePaths("/WEB-INF/"))
+                .andReturn(Collections.singleton("/WEB-INF/tiles.xml"));
+        EasyMock.expect(servletContext.getResource("/WEB-INF/tiles.xml")).andReturn(spacedUrl);
+
+        // Missing resource
+        EasyMock.expect(servletContext.getResource("/WEB-INF/missing.xml")).andReturn(null);
+
+        // IOException thrown by ServletContext
+        EasyMock.expect(servletContext.getResource("/WEB-INF/error.xml")).andThrow(new MalformedURLException("Invalid"));
+
+        EasyMock.replay(servletContext);
+
+        Collection<ApplicationResource> spacedResources = context.getResources("/WEB-INF/*.xml");
+        assertEquals(1, spacedResources.size());
+
+        assertNull(context.getResource((String) null));
+        assertTrue(context.getResources("").isEmpty());
+        assertNull(context.getResource("/WEB-INF/missing.xml"));
+        assertTrue(context.getResources("/WEB-INF/error.xml").isEmpty());
+
+        EasyMock.verify(servletContext);
+    }
+
+    /**
+     * Tests that {@link WildcardServletApplicationContext#getResource(ApplicationResource, Locale)}
+     * returns {@code null} when no localized resource exists.
+     *
+     * @throws IOException If something goes wrong.
+     */
+    public void testGetLocalizedResourceNotFound() throws IOException {
+        URL baseUrl = URI.create("file:///tiles/WEB-INF/tiles.xml").toURL();
+
+        EasyMock.expect(servletContext.getResource("/WEB-INF/tiles_de.xml")).andReturn(null);
+        EasyMock.replay(servletContext);
+
+        ApplicationResource baseResource = new URLApplicationResource("/WEB-INF/tiles.xml", baseUrl);
+        ApplicationResource localized = context.getResource(baseResource, Locale.GERMAN);
+
+        assertNull(localized);
+        EasyMock.verify(servletContext);
+    }
+
+    /**
+     * A mock class loader.
+     */
+    public static class MockClassLoader extends ClassLoader {
 
         /**
          * A vector of resources.
          */
-        private Vector<URL> testPropertiesResources;
+        private final Vector<URL> testPropertiesResources;
 
         /**
          * Constructor.
          *
-         * @throws MalformedURLException If the URL is not valid (that should
-         * not happen).
+         * @throws MalformedURLException If the URL is not valid.
          */
         public MockClassLoader() throws MalformedURLException {
-            testPropertiesResources = new Vector<URL>();
-            testPropertiesResources.add(new URL("file://tiles/test/test.properties"));
-            testPropertiesResources.add(new URL("file://tiles/two/test.properties"));
-            testPropertiesResources.add(new URL("file://tiles/three/test.properties"));
+            testPropertiesResources = new Vector<>();
+            testPropertiesResources.add(URI.create("file:///tiles/test/test.properties").toURL());
+            testPropertiesResources.add(URI.create("file:///tiles/two/test.properties").toURL());
+            testPropertiesResources.add(URI.create("file:///tiles/three/test.properties").toURL());
         }
-
+        /** {@inheritDoc} */
+        @Override
+        public URL findResource(String name) {
+            if ("test.properties".equals(name)) {
+                return testPropertiesResources.firstElement();
+            }
+            return super.findResource(name);
+        }
         /** {@inheritDoc} */
         @Override
         public Enumeration<URL> findResources(String path) throws IOException {
-            Enumeration<URL> retValue = null;
             if ("test.properties".equals(path)) {
-                retValue = testPropertiesResources.elements();
-            } else {
-                retValue = super.findResources(path);
+                return testPropertiesResources.elements();
             }
-
-            return retValue;
+            return super.findResources(path);
         }
     }
 }
