@@ -87,13 +87,13 @@ Modified by Laurent Schoelens, 2026
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-core</artifactId>
-            <version>1.6.7</version>
+            <version>1.6.8</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
-            <version>1.6.7</version>
+            <version>1.6.8</version>
             <scope>test</scope>
         </dependency>
         <dependency>
